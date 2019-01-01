@@ -1,39 +1,19 @@
 import Foundation
 
-struct Log {
-    let date: Date
-    let appName: String
-    let level: LogLevel
-    let message: String
-    let data: [String:String]
-}
+class FileLoaderImpl: FileLoader {
 
-enum LogLevel {
-    case trace, debug, info, warn, error
-    
-    static func from(string levelString: String) -> LogLevel? {
-        switch levelString {
-        case "TRACE": return .trace
-        case "DEBUG": return .debug
-        case "INFO": return .info
-        case "WARN": return .warn
-        case "ERROR": return .error
-        default: return nil
-        }
-    }
-}
-
-class LogsViewModel {
-    
     private static let dateFormatter: ISO8601DateFormatter = {
         var formatter = ISO8601DateFormatter()
         formatter.formatOptions = [.withInternetDateTime,.withFractionalSeconds]
         return formatter
     }()
     
+    private var apps: [FileHandle: String] = [:]
+    
+    private var delegates: [FileLoaderDelegate] = []
+    
     private(set) var logs: [Log] = []
     
-    private(set) var columns: Set<String> = []
     private var fileBookmarks: [String: Data] =
         (UserDefaults.standard.dictionary(forKey: "bookmarks")) as? [String : Data] ?? [:] {
         didSet {
@@ -41,30 +21,23 @@ class LogsViewModel {
         }
     }
     
-    private var apps: [FileHandle: String] = [:]
-    
-    var delegate: MainViewModelDelegate?
-    
     init() {
+        let handleChunkRead: (Notification) -> Void = { notification in
+            let fileHandle = notification.object as! FileHandle
+            let data = notification.userInfo![NSFileHandleNotificationDataItem] as! Data
+            self.readChunkData(data: data, app: self.apps[fileHandle]!)
+            fileHandle.waitForDataInBackgroundAndNotify()
+        }
+        
         NotificationCenter.default.addObserver(
             forName: .NSFileHandleReadToEndOfFileCompletion,
             object: nil, queue: nil,
-            using: { notification in
-                let fileHandle = notification.object as! FileHandle
-                let data = notification.userInfo![NSFileHandleNotificationDataItem] as! Data
-                self.readChunkData(data: data, app: self.apps[fileHandle]!)
-                fileHandle.waitForDataInBackgroundAndNotify()
-        })
+            using: handleChunkRead)
         
         NotificationCenter.default.addObserver(
             forName: FileHandle.readCompletionNotification,
             object: nil, queue: nil,
-            using: { notification in
-                let fileHandle = notification.object as! FileHandle
-                let data = notification.userInfo![NSFileHandleNotificationDataItem] as! Data
-                self.readChunkData(data: data, app: self.apps[fileHandle]!)
-                fileHandle.waitForDataInBackgroundAndNotify()
-        })
+            using: handleChunkRead)
         
         NotificationCenter.default.addObserver(
             forName: .NSFileHandleDataAvailable,
@@ -78,7 +51,12 @@ class LogsViewModel {
         fileBookmarks.forEach({(key, value) in loadBookMarkData(bookmarkData: value)})
     }
     
-    func loadNewFile(url: URL) {
+    func addDelegate(delegate: FileLoaderDelegate) {
+        self.delegates.append(delegate)
+        delegate.onNewLogsLoaded(logs)
+    }
+    
+    func loadFile(withURL url: URL) {
         
         // Make sure we don't read twice the same file
         if fileBookmarks.contains(where: { (key, value) in key == url.absoluteString }) {
@@ -103,7 +81,7 @@ class LogsViewModel {
     }
     
     /// Load a log file, parse its content and merge the new logs with existing logs.
-    func loadBookMarkData(bookmarkData: Data) {
+    private func loadBookMarkData(bookmarkData: Data) {
         
         // Recreate file URL from bookmark data
         var isStale: Bool = false
@@ -138,8 +116,7 @@ class LogsViewModel {
         handle.readToEndOfFileInBackgroundAndNotify()
     }
     
-    // TODO: remove "backend", infer it for the file handler instead
-    func readChunkData(data: Data, app: String) {
+    private func readChunkData(data: Data, app: String) {
         guard let text = String(data: data, encoding: .utf8) else {
             print("Unable to read incoming data as UTF8.")
             return
@@ -168,26 +145,23 @@ class LogsViewModel {
             var data = jsonDict.mapValues { value in String(describing: value) }
             
             // Find the date of the log, or ignore it if it doesn't have one.
-            guard let dateString = data.removeValue(forKey: "@timestamp")
-                else {
-                    print("Ignoring line without a date: \(data)")
-                    return nil
+            guard let dateString = data.removeValue(forKey: "@timestamp") else {
+                print("Ignoring line without a date: \(data)")
+                return nil
             }
             
             // Find and parse the date of the log, or ignore the log if it doesn't have one.
             // Note that it removes the date from the data, since we'll have one ourselves.
-            guard let date = LogsViewModel.dateFormatter.date(from: dateString)
-                else {
-                    print("Ignoring line because unable to parse the date \(dateString)")
-                    return nil
+            guard let date = FileLoaderImpl.dateFormatter.date(from: dateString) else {
+                print("Ignoring line because unable to parse the date \(dateString)")
+                return nil
             }
             
             // Find the level of the log, or ignore the log if it doesn't have one.
             // Note that it removes the date from the data, since we'll have one ourselves.
-            guard let levelString = data.removeValue(forKey: "level")
-                else {
-                    print("Ignoring line without a level: \(data)")
-                    return nil
+            guard let levelString = data.removeValue(forKey: "level") else {
+                print("Ignoring line without a level: \(data)")
+                return nil
             }
             
             guard let level = LogLevel.from(string: levelString) else {
@@ -211,18 +185,7 @@ class LogsViewModel {
         }
         
         // Append the logs and notify the delegate
-        let initialSize = logs.count
         logs.append(contentsOf: newLogs)
-        let finalSize = logs.count
-        delegate?.logsDidUpdate(update: .added(initialSize..<finalSize))
+        delegates.forEach { $0.onNewLogsLoaded(newLogs) }
     }
-}
-
-protocol MainViewModelDelegate {
-    
-    func logsDidUpdate(update: LogsUpdate)
-}
-
-enum LogsUpdate {
-    case added(CountableRange<Int>)
 }

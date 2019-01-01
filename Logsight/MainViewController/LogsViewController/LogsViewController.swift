@@ -62,6 +62,7 @@ extension LogsViewController : DropZoneDelegate {
 extension LogsViewController: NSTableViewDataSource, NSTableViewDelegate {
     
     func numberOfRows(in tableView: NSTableView) -> Int {
+        print("Numbe rof rrow \(viewModel.logs.count)")
         return viewModel.logs.count
     }
     

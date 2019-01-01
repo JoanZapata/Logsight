@@ -9,6 +9,17 @@
 /* Begin PBXBuildFile section */
 		0F07CFA821DC0768006B536C /* LogLevelDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F07CFA621DC0768006B536C /* LogLevelDot.swift */; };
 		0F07CFA921DC0768006B536C /* MessageTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F07CFA721DC0768006B536C /* MessageTableCellView.swift */; };
+		0F07CFAC21DC083B006B536C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F07CFAB21DC083B006B536C /* MainViewController.swift */; };
+		0F07CFAE21DC0856006B536C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F07CFAD21DC0856006B536C /* MainViewController.xib */; };
+		0F07CFB021DC089E006B536C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F07CFAF21DC089E006B536C /* MainViewModel.swift */; };
+		0F07CFB321DC0A0E006B536C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F07CFB221DC0A0E006B536C /* MenuViewController.swift */; };
+		0F07CFB521DC0A1A006B536C /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F07CFB421DC0A1A006B536C /* MenuViewController.xib */; };
+		0F07CFB721DC0A23006B536C /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F07CFB621DC0A23006B536C /* MenuViewModel.swift */; };
+		0F07CFBA21DC1C8A006B536C /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F07CFB921DC1C8A006B536C /* FileLoader.swift */; };
+		0F07CFBD21DC1D7F006B536C /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F07CFBC21DC1D7F006B536C /* Log.swift */; };
+		0F07CFBF21DC1D91006B536C /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F07CFBE21DC1D91006B536C /* LogLevel.swift */; };
+		0F07CFC121DC1FA8006B536C /* FileLoaderImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F07CFC021DC1FA8006B536C /* FileLoaderImpl.swift */; };
+		0F07CFC321DC1FC1006B536C /* FileLoaderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F07CFC221DC1FC1006B536C /* FileLoaderDelegate.swift */; };
 		0F33D88721DBB0C600D58F20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F33D88621DBB0C600D58F20 /* AppDelegate.swift */; };
 		0F33D88921DBB0C800D58F20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F33D88821DBB0C800D58F20 /* Assets.xcassets */; };
 		0F33D88C21DBB0C800D58F20 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F33D88A21DBB0C800D58F20 /* MainMenu.xib */; };
@@ -21,6 +32,17 @@
 /* Begin PBXFileReference section */
 		0F07CFA621DC0768006B536C /* LogLevelDot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLevelDot.swift; sourceTree = "<group>"; };
 		0F07CFA721DC0768006B536C /* MessageTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableCellView.swift; sourceTree = "<group>"; };
+		0F07CFAB21DC083B006B536C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0F07CFAD21DC0856006B536C /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		0F07CFAF21DC089E006B536C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		0F07CFB221DC0A0E006B536C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		0F07CFB421DC0A1A006B536C /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		0F07CFB621DC0A23006B536C /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		0F07CFB921DC1C8A006B536C /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
+		0F07CFBC21DC1D7F006B536C /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		0F07CFBE21DC1D91006B536C /* LogLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
+		0F07CFC021DC1FA8006B536C /* FileLoaderImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoaderImpl.swift; sourceTree = "<group>"; };
+		0F07CFC221DC1FC1006B536C /* FileLoaderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoaderDelegate.swift; sourceTree = "<group>"; };
 		0F33D88321DBB0C600D58F20 /* Logsight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logsight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F33D88621DBB0C600D58F20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F33D88821DBB0C800D58F20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,6 +85,48 @@
 			path = LogLevelDot;
 			sourceTree = "<group>";
 		};
+		0F07CFAA21DC07E3006B536C /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0F07CFAB21DC083B006B536C /* MainViewController.swift */,
+				0F07CFAD21DC0856006B536C /* MainViewController.xib */,
+				0F07CFAF21DC089E006B536C /* MainViewModel.swift */,
+				0F07CFB121DC09E9006B536C /* MenuViewController */,
+				0F33D89421DBB21200D58F20 /* LogsViewController */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		0F07CFB121DC09E9006B536C /* MenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0F07CFB221DC0A0E006B536C /* MenuViewController.swift */,
+				0F07CFB421DC0A1A006B536C /* MenuViewController.xib */,
+				0F07CFB621DC0A23006B536C /* MenuViewModel.swift */,
+			);
+			path = MenuViewController;
+			sourceTree = "<group>";
+		};
+		0F07CFB821DC1C5E006B536C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0F07CFBB21DC1D73006B536C /* Model */,
+				0F07CFB921DC1C8A006B536C /* FileLoader.swift */,
+				0F07CFC021DC1FA8006B536C /* FileLoaderImpl.swift */,
+				0F07CFC221DC1FC1006B536C /* FileLoaderDelegate.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0F07CFBB21DC1D73006B536C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0F07CFBC21DC1D7F006B536C /* Log.swift */,
+				0F07CFBE21DC1D91006B536C /* LogLevel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		0F33D87A21DBB0C600D58F20 = {
 			isa = PBXGroup;
 			children = (
@@ -84,7 +148,8 @@
 		0F33D88521DBB0C600D58F20 /* Logsight */ = {
 			isa = PBXGroup;
 			children = (
-				0F33D89421DBB21200D58F20 /* LogsViewController */,
+				0F07CFB821DC1C5E006B536C /* Services */,
+				0F07CFAA21DC07E3006B536C /* MainViewController */,
 				0F33D88621DBB0C600D58F20 /* AppDelegate.swift */,
 				0F33D88821DBB0C800D58F20 /* Assets.xcassets */,
 				0F33D88A21DBB0C800D58F20 /* MainMenu.xib */,
@@ -180,7 +245,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F07CFAE21DC0856006B536C /* MainViewController.xib in Resources */,
 				0F33D88921DBB0C800D58F20 /* Assets.xcassets in Resources */,
+				0F07CFB521DC0A1A006B536C /* MenuViewController.xib in Resources */,
 				0F33D89A21DBB38000D58F20 /* LogsViewController.xib in Resources */,
 				0F33D88C21DBB0C800D58F20 /* MainMenu.xib in Resources */,
 			);
@@ -193,12 +260,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F07CFC321DC1FC1006B536C /* FileLoaderDelegate.swift in Sources */,
+				0F07CFAC21DC083B006B536C /* MainViewController.swift in Sources */,
 				0F07CFA821DC0768006B536C /* LogLevelDot.swift in Sources */,
+				0F07CFBD21DC1D7F006B536C /* Log.swift in Sources */,
 				0F33D8A521DBB88D00D58F20 /* LogsViewModel.swift in Sources */,
+				0F07CFBA21DC1C8A006B536C /* FileLoader.swift in Sources */,
+				0F07CFB721DC0A23006B536C /* MenuViewModel.swift in Sources */,
+				0F07CFBF21DC1D91006B536C /* LogLevel.swift in Sources */,
 				0F33D88721DBB0C600D58F20 /* AppDelegate.swift in Sources */,
+				0F07CFB321DC0A0E006B536C /* MenuViewController.swift in Sources */,
 				0F33D89D21DBB70300D58F20 /* DropZone.swift in Sources */,
+				0F07CFC121DC1FA8006B536C /* FileLoaderImpl.swift in Sources */,
 				0F33D89621DBB22500D58F20 /* LogsViewController.swift in Sources */,
 				0F07CFA921DC0768006B536C /* MessageTableCellView.swift in Sources */,
+				0F07CFB021DC089E006B536C /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

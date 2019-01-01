@@ -1,6 +1,6 @@
 import Cocoa
 
-class MainViewController : NSViewController {
+class LogsViewController : NSViewController {
     
     private static let dateFormatter: DateFormatter = {
         var dateFormatter = DateFormatter()
@@ -12,9 +12,9 @@ class MainViewController : NSViewController {
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var dropZone: DropZone!
     
-    let viewModel: MainViewModel
+    let viewModel: LogsViewModel
     
-    init(viewModel: MainViewModel) {
+    init(viewModel: LogsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -32,7 +32,7 @@ class MainViewController : NSViewController {
     }
 }
 
-extension MainViewController : MainViewModelDelegate {
+extension LogsViewController : MainViewModelDelegate {
     
     func logsDidUpdate(update: LogsUpdate) {
         let lastVisibleRow = tableView.rows(in: tableView.visibleRect).upperBound
@@ -52,14 +52,14 @@ extension MainViewController : MainViewModelDelegate {
     }
 }
 
-extension MainViewController : DropZoneDelegate {
+extension LogsViewController : DropZoneDelegate {
     
     func fileDropped(url: URL) {
         viewModel.loadNewFile(url: url)
     }
 }
 
-extension MainViewController: NSTableViewDataSource, NSTableViewDelegate {
+extension LogsViewController: NSTableViewDataSource, NSTableViewDelegate {
     
     func numberOfRows(in tableView: NSTableView) -> Int {
         return viewModel.logs.count
@@ -74,7 +74,7 @@ extension MainViewController: NSTableViewDataSource, NSTableViewDelegate {
         guard let cell = tableView.makeView(withIdentifier: columnIdentifier, owner: nil) as? NSTableCellView else { return nil }
         
         switch column {
-        case "__date": cell.textField?.stringValue = MainViewController.dateFormatter.string(from: item.date)
+        case "__date": cell.textField?.stringValue = LogsViewController.dateFormatter.string(from: item.date)
         case "__app": cell.textField?.stringValue = item.appName
         case "__message": (cell as! MessageTableCellView).setup(text: item.message, logLevel: item.level, columnWidth: columnWidth)
         default: cell.textField?.stringValue = item.data[column]!

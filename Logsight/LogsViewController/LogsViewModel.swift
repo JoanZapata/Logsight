@@ -23,7 +23,7 @@ enum LogLevel {
     }
 }
 
-class MainViewModel {
+class LogsViewModel {
     
     private static let dateFormatter: ISO8601DateFormatter = {
         var formatter = ISO8601DateFormatter()
@@ -176,7 +176,7 @@ class MainViewModel {
             
             // Find and parse the date of the log, or ignore the log if it doesn't have one.
             // Note that it removes the date from the data, since we'll have one ourselves.
-            guard let date = MainViewModel.dateFormatter.date(from: dateString)
+            guard let date = LogsViewModel.dateFormatter.date(from: dateString)
                 else {
                     print("Ignoring line because unable to parse the date \(dateString)")
                     return nil

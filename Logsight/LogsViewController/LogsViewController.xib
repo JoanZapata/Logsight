@@ -5,7 +5,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="MainViewController" customModule="Logsight" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="LogsViewController" customModule="Logsight" customModuleProvider="target">
             <connections>
                 <outlet property="dropZone" destination="GPf-Vz-dgL" id="9aw-ZJ-K8a"/>
                 <outlet property="tableView" destination="L6X-3W-547" id="O71-IZ-ZlT"/>
@@ -110,11 +110,11 @@
                                         </textFieldCell>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
-                                            <tableCellView id="7Ag-QS-NAC" customClass="MessageTableCellView" customModule="JsonLogVisualizer" customModuleProvider="target">
+                                            <tableCellView id="7Ag-QS-NAC" customClass="MessageTableCellView" customModule="Logsight" customModuleProvider="target">
                                                 <rect key="frame" x="129" y="1" width="500" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="M7R-x2-IvR" customClass="LogLevelDot" customModule="JsonLogVisualizer" customModuleProvider="target">
+                                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="M7R-x2-IvR" customClass="LogLevelDot" customModule="Logsight" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="6" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="6" id="Kek-Bm-vAX"/>
@@ -150,7 +150,7 @@
                         </subviews>
                         <nil key="backgroundColor"/>
                     </clipView>
-                    <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="0.92715231788079466" horizontal="YES" id="RWS-Do-VPX">
+                    <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="RWS-Do-VPX">
                         <rect key="frame" x="0.0" y="256" width="480" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
@@ -163,7 +163,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </tableHeaderView>
                 </scrollView>
-                <customView translatesAutoresizingMaskIntoConstraints="NO" id="GPf-Vz-dgL" customClass="DropZone" customModule="JsonLogVisualizer" customModuleProvider="target">
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="GPf-Vz-dgL" customClass="DropZone" customModule="Logsight" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
                 </customView>
             </subviews>

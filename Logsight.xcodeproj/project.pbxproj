@@ -7,30 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F07CFA821DC0768006B536C /* LogLevelDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F07CFA621DC0768006B536C /* LogLevelDot.swift */; };
+		0F07CFA921DC0768006B536C /* MessageTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F07CFA721DC0768006B536C /* MessageTableCellView.swift */; };
 		0F33D88721DBB0C600D58F20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F33D88621DBB0C600D58F20 /* AppDelegate.swift */; };
 		0F33D88921DBB0C800D58F20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F33D88821DBB0C800D58F20 /* Assets.xcassets */; };
 		0F33D88C21DBB0C800D58F20 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F33D88A21DBB0C800D58F20 /* MainMenu.xib */; };
-		0F33D89621DBB22500D58F20 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F33D89521DBB22500D58F20 /* MainViewController.swift */; };
-		0F33D89A21DBB38000D58F20 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F33D89921DBB38000D58F20 /* MainViewController.xib */; };
+		0F33D89621DBB22500D58F20 /* LogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F33D89521DBB22500D58F20 /* LogsViewController.swift */; };
+		0F33D89A21DBB38000D58F20 /* LogsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F33D89921DBB38000D58F20 /* LogsViewController.xib */; };
 		0F33D89D21DBB70300D58F20 /* DropZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F33D89C21DBB70300D58F20 /* DropZone.swift */; };
-		0F33D8A221DBB82000D58F20 /* LogLevelDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F33D8A021DBB82000D58F20 /* LogLevelDot.swift */; };
-		0F33D8A321DBB82000D58F20 /* MessageTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F33D8A121DBB82000D58F20 /* MessageTableCellView.swift */; };
-		0F33D8A521DBB88D00D58F20 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F33D8A421DBB88D00D58F20 /* MainViewModel.swift */; };
+		0F33D8A521DBB88D00D58F20 /* LogsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F33D8A421DBB88D00D58F20 /* LogsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F07CFA621DC0768006B536C /* LogLevelDot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLevelDot.swift; sourceTree = "<group>"; };
+		0F07CFA721DC0768006B536C /* MessageTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableCellView.swift; sourceTree = "<group>"; };
 		0F33D88321DBB0C600D58F20 /* Logsight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logsight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F33D88621DBB0C600D58F20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F33D88821DBB0C800D58F20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F33D88B21DBB0C800D58F20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		0F33D88D21DBB0C800D58F20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F33D88E21DBB0C800D58F20 /* Logsight.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Logsight.entitlements; sourceTree = "<group>"; };
-		0F33D89521DBB22500D58F20 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		0F33D89921DBB38000D58F20 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		0F33D89521DBB22500D58F20 /* LogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsViewController.swift; sourceTree = "<group>"; };
+		0F33D89921DBB38000D58F20 /* LogsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogsViewController.xib; sourceTree = "<group>"; };
 		0F33D89C21DBB70300D58F20 /* DropZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropZone.swift; sourceTree = "<group>"; };
-		0F33D8A021DBB82000D58F20 /* LogLevelDot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLevelDot.swift; sourceTree = "<group>"; };
-		0F33D8A121DBB82000D58F20 /* MessageTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableCellView.swift; sourceTree = "<group>"; };
-		0F33D8A421DBB88D00D58F20 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		0F33D8A421DBB88D00D58F20 /* LogsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsViewModel.swift; sourceTree = "<group>"; };
 		0F33D8A621DBC32B00D58F20 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0F33D8AA21DBCD5F00D58F20 /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -46,6 +46,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F07CFA421DC0768006B536C /* MessageTableCellView */ = {
+			isa = PBXGroup;
+			children = (
+				0F07CFA521DC0768006B536C /* LogLevelDot */,
+				0F07CFA721DC0768006B536C /* MessageTableCellView.swift */,
+			);
+			path = MessageTableCellView;
+			sourceTree = "<group>";
+		};
+		0F07CFA521DC0768006B536C /* LogLevelDot */ = {
+			isa = PBXGroup;
+			children = (
+				0F07CFA621DC0768006B536C /* LogLevelDot.swift */,
+			);
+			path = LogLevelDot;
+			sourceTree = "<group>";
+		};
 		0F33D87A21DBB0C600D58F20 = {
 			isa = PBXGroup;
 			children = (
@@ -67,7 +84,7 @@
 		0F33D88521DBB0C600D58F20 /* Logsight */ = {
 			isa = PBXGroup;
 			children = (
-				0F33D89421DBB21200D58F20 /* MainViewController */,
+				0F33D89421DBB21200D58F20 /* LogsViewController */,
 				0F33D88621DBB0C600D58F20 /* AppDelegate.swift */,
 				0F33D88821DBB0C800D58F20 /* Assets.xcassets */,
 				0F33D88A21DBB0C800D58F20 /* MainMenu.xib */,
@@ -77,16 +94,16 @@
 			path = Logsight;
 			sourceTree = "<group>";
 		};
-		0F33D89421DBB21200D58F20 /* MainViewController */ = {
+		0F33D89421DBB21200D58F20 /* LogsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0F33D89E21DBB82000D58F20 /* MessageTableCellView */,
+				0F07CFA421DC0768006B536C /* MessageTableCellView */,
 				0F33D89B21DBB6F800D58F20 /* DropZone */,
-				0F33D89521DBB22500D58F20 /* MainViewController.swift */,
-				0F33D89921DBB38000D58F20 /* MainViewController.xib */,
-				0F33D8A421DBB88D00D58F20 /* MainViewModel.swift */,
+				0F33D89521DBB22500D58F20 /* LogsViewController.swift */,
+				0F33D89921DBB38000D58F20 /* LogsViewController.xib */,
+				0F33D8A421DBB88D00D58F20 /* LogsViewModel.swift */,
 			);
-			path = MainViewController;
+			path = LogsViewController;
 			sourceTree = "<group>";
 		};
 		0F33D89B21DBB6F800D58F20 /* DropZone */ = {
@@ -95,24 +112,6 @@
 				0F33D89C21DBB70300D58F20 /* DropZone.swift */,
 			);
 			path = DropZone;
-			sourceTree = "<group>";
-		};
-		0F33D89E21DBB82000D58F20 /* MessageTableCellView */ = {
-			isa = PBXGroup;
-			children = (
-				0F33D89F21DBB82000D58F20 /* LogLevelDot */,
-				0F33D8A121DBB82000D58F20 /* MessageTableCellView.swift */,
-			);
-			name = MessageTableCellView;
-			path = Logsight/MainViewController/MessageTableCellView;
-			sourceTree = SOURCE_ROOT;
-		};
-		0F33D89F21DBB82000D58F20 /* LogLevelDot */ = {
-			isa = PBXGroup;
-			children = (
-				0F33D8A021DBB82000D58F20 /* LogLevelDot.swift */,
-			);
-			path = LogLevelDot;
 			sourceTree = "<group>";
 		};
 		0F33D8A721DBCD4000D58F20 /* Medias */ = {
@@ -182,7 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F33D88921DBB0C800D58F20 /* Assets.xcassets in Resources */,
-				0F33D89A21DBB38000D58F20 /* MainViewController.xib in Resources */,
+				0F33D89A21DBB38000D58F20 /* LogsViewController.xib in Resources */,
 				0F33D88C21DBB0C800D58F20 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,12 +193,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F33D8A521DBB88D00D58F20 /* MainViewModel.swift in Sources */,
-				0F33D8A221DBB82000D58F20 /* LogLevelDot.swift in Sources */,
+				0F07CFA821DC0768006B536C /* LogLevelDot.swift in Sources */,
+				0F33D8A521DBB88D00D58F20 /* LogsViewModel.swift in Sources */,
 				0F33D88721DBB0C600D58F20 /* AppDelegate.swift in Sources */,
 				0F33D89D21DBB70300D58F20 /* DropZone.swift in Sources */,
-				0F33D89621DBB22500D58F20 /* MainViewController.swift in Sources */,
-				0F33D8A321DBB82000D58F20 /* MessageTableCellView.swift in Sources */,
+				0F33D89621DBB22500D58F20 /* LogsViewController.swift in Sources */,
+				0F07CFA921DC0768006B536C /* MessageTableCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

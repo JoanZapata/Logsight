@@ -31,6 +31,8 @@
 		0F33D8A021DBB82000D58F20 /* LogLevelDot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLevelDot.swift; sourceTree = "<group>"; };
 		0F33D8A121DBB82000D58F20 /* MessageTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableCellView.swift; sourceTree = "<group>"; };
 		0F33D8A421DBB88D00D58F20 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		0F33D8A621DBC32B00D58F20 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0F33D8AA21DBCD5F00D58F20 /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,8 @@
 		0F33D87A21DBB0C600D58F20 = {
 			isa = PBXGroup;
 			children = (
+				0F33D8A721DBCD4000D58F20 /* Medias */,
+				0F33D8A621DBC32B00D58F20 /* README.md */,
 				0F33D88521DBB0C600D58F20 /* Logsight */,
 				0F33D88421DBB0C600D58F20 /* Products */,
 			);
@@ -109,6 +113,14 @@
 				0F33D8A021DBB82000D58F20 /* LogLevelDot.swift */,
 			);
 			path = LogLevelDot;
+			sourceTree = "<group>";
+		};
+		0F33D8A721DBCD4000D58F20 /* Medias */ = {
+			isa = PBXGroup;
+			children = (
+				0F33D8AA21DBCD5F00D58F20 /* screenshot.png */,
+			);
+			path = Medias;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

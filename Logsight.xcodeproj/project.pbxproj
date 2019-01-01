@@ -10,6 +10,12 @@
 		0F33D88721DBB0C600D58F20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F33D88621DBB0C600D58F20 /* AppDelegate.swift */; };
 		0F33D88921DBB0C800D58F20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F33D88821DBB0C800D58F20 /* Assets.xcassets */; };
 		0F33D88C21DBB0C800D58F20 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F33D88A21DBB0C800D58F20 /* MainMenu.xib */; };
+		0F33D89621DBB22500D58F20 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F33D89521DBB22500D58F20 /* MainViewController.swift */; };
+		0F33D89A21DBB38000D58F20 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F33D89921DBB38000D58F20 /* MainViewController.xib */; };
+		0F33D89D21DBB70300D58F20 /* DropZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F33D89C21DBB70300D58F20 /* DropZone.swift */; };
+		0F33D8A221DBB82000D58F20 /* LogLevelDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F33D8A021DBB82000D58F20 /* LogLevelDot.swift */; };
+		0F33D8A321DBB82000D58F20 /* MessageTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F33D8A121DBB82000D58F20 /* MessageTableCellView.swift */; };
+		0F33D8A521DBB88D00D58F20 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F33D8A421DBB88D00D58F20 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,12 @@
 		0F33D88B21DBB0C800D58F20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		0F33D88D21DBB0C800D58F20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F33D88E21DBB0C800D58F20 /* Logsight.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Logsight.entitlements; sourceTree = "<group>"; };
+		0F33D89521DBB22500D58F20 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0F33D89921DBB38000D58F20 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		0F33D89C21DBB70300D58F20 /* DropZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropZone.swift; sourceTree = "<group>"; };
+		0F33D8A021DBB82000D58F20 /* LogLevelDot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLevelDot.swift; sourceTree = "<group>"; };
+		0F33D8A121DBB82000D58F20 /* MessageTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableCellView.swift; sourceTree = "<group>"; };
+		0F33D8A421DBB88D00D58F20 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +63,7 @@
 		0F33D88521DBB0C600D58F20 /* Logsight */ = {
 			isa = PBXGroup;
 			children = (
+				0F33D89421DBB21200D58F20 /* MainViewController */,
 				0F33D88621DBB0C600D58F20 /* AppDelegate.swift */,
 				0F33D88821DBB0C800D58F20 /* Assets.xcassets */,
 				0F33D88A21DBB0C800D58F20 /* MainMenu.xib */,
@@ -58,6 +71,44 @@
 				0F33D88E21DBB0C800D58F20 /* Logsight.entitlements */,
 			);
 			path = Logsight;
+			sourceTree = "<group>";
+		};
+		0F33D89421DBB21200D58F20 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0F33D89E21DBB82000D58F20 /* MessageTableCellView */,
+				0F33D89B21DBB6F800D58F20 /* DropZone */,
+				0F33D89521DBB22500D58F20 /* MainViewController.swift */,
+				0F33D89921DBB38000D58F20 /* MainViewController.xib */,
+				0F33D8A421DBB88D00D58F20 /* MainViewModel.swift */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		0F33D89B21DBB6F800D58F20 /* DropZone */ = {
+			isa = PBXGroup;
+			children = (
+				0F33D89C21DBB70300D58F20 /* DropZone.swift */,
+			);
+			path = DropZone;
+			sourceTree = "<group>";
+		};
+		0F33D89E21DBB82000D58F20 /* MessageTableCellView */ = {
+			isa = PBXGroup;
+			children = (
+				0F33D89F21DBB82000D58F20 /* LogLevelDot */,
+				0F33D8A121DBB82000D58F20 /* MessageTableCellView.swift */,
+			);
+			name = MessageTableCellView;
+			path = Logsight/MainViewController/MessageTableCellView;
+			sourceTree = SOURCE_ROOT;
+		};
+		0F33D89F21DBB82000D58F20 /* LogLevelDot */ = {
+			isa = PBXGroup;
+			children = (
+				0F33D8A021DBB82000D58F20 /* LogLevelDot.swift */,
+			);
+			path = LogLevelDot;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F33D88921DBB0C800D58F20 /* Assets.xcassets in Resources */,
+				0F33D89A21DBB38000D58F20 /* MainViewController.xib in Resources */,
 				0F33D88C21DBB0C800D58F20 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,7 +182,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F33D8A521DBB88D00D58F20 /* MainViewModel.swift in Sources */,
+				0F33D8A221DBB82000D58F20 /* LogLevelDot.swift in Sources */,
 				0F33D88721DBB0C600D58F20 /* AppDelegate.swift in Sources */,
+				0F33D89D21DBB70300D58F20 /* DropZone.swift in Sources */,
+				0F33D89621DBB22500D58F20 /* MainViewController.swift in Sources */,
+				0F33D8A321DBB82000D58F20 /* MessageTableCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

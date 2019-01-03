@@ -23,10 +23,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView distribution="equalSpacing" orientation="vertical" alignment="leading" spacing="6" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1A9-p3-hTa">
-                                <rect key="frame" x="0.0" y="0.0" width="537" height="293"/>
+                                <rect key="frame" x="0.0" y="0.0" width="537" height="283"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="6" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qsF-mY-bqB">
-                                        <rect key="frame" x="10" y="65" width="124" height="163"/>
+                                        <rect key="frame" x="10" y="120" width="124" height="163"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eIX-iB-OFr">
                                                 <rect key="frame" x="-2" y="146" width="81" height="17"/>
@@ -128,20 +128,28 @@
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="rHF-Tg-nHl" userLabel="Spacer">
+                                        <rect key="frame" x="0.0" y="0.0" width="163" height="1"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="d8f-Tn-Grt"/>
+                                        </constraints>
+                                    </customView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="qsF-mY-bqB" firstAttribute="leading" secondItem="1A9-p3-hTa" secondAttribute="leading" constant="10" id="iDa-Z6-Mph"/>
                                 </constraints>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="1A9-p3-hTa" firstAttribute="top" secondItem="27C-G6-DD0" secondAttribute="top" id="HAw-fE-4UR"/>
+                            <constraint firstItem="1A9-p3-hTa" firstAttribute="top" secondItem="27C-G6-DD0" secondAttribute="top" constant="10" id="HAw-fE-4UR"/>
                             <constraint firstAttribute="trailing" secondItem="1A9-p3-hTa" secondAttribute="trailing" id="SMF-cC-947"/>
                             <constraint firstAttribute="bottom" secondItem="1A9-p3-hTa" secondAttribute="bottom" id="Ugr-c8-fdt"/>
                             <constraint firstItem="1A9-p3-hTa" firstAttribute="leading" secondItem="27C-G6-DD0" secondAttribute="leading" id="rJY-0c-hIe"/>

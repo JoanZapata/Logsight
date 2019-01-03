@@ -2,7 +2,7 @@ import Cocoa
 
 class MainViewController : NSViewController {
     
-    private let menuMinWidth = 200
+    private let menuMinWidth = 170
     private let viewModel: MainViewModel
     
     @IBOutlet weak var splitView: NSSplitView!
@@ -23,9 +23,8 @@ class MainViewController : NSViewController {
         splitView.addArrangedSubview(menuVC.view)
         splitView.addArrangedSubview(logsVC.view)
         
-        menuVC.view.setFrameSize(NSSize(width: menuMinWidth, height: 0))
         menuVC.view.widthAnchor
-            .constraint(greaterThanOrEqualToConstant: CGFloat(menuMinWidth))
+            .constraint(equalToConstant: CGFloat(menuMinWidth))
             .isActive = true
     }
 }

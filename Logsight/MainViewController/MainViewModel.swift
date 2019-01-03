@@ -7,6 +7,6 @@ class MainViewModel {
     
     init(fileLoader: FileLoader) {
         self.logsViewModel = LogsViewModel(fileLoader: fileLoader)
-        self.menuViewModel = MenuViewModel()
+        self.menuViewModel = MenuViewModel(fileLoader: fileLoader)
     }
 }

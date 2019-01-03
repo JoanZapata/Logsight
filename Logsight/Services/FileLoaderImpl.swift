@@ -53,7 +53,13 @@ class FileLoaderImpl: FileLoader {
     
     func addDelegate(delegate: FileLoaderDelegate) {
         self.delegates.append(delegate)
+        
+        // Immediately make the right call so that the
+        // delegate can catch up on past events
         delegate.onNewLogsLoaded(logs)
+        apps.forEach { key, value in
+            delegate.onNewFileLoading(path: value, applicationName: value)
+        }
     }
     
     func loadFile(withURL url: URL) {
@@ -109,11 +115,18 @@ class FileLoaderImpl: FileLoader {
         }
         
         // Retain the app name related to this file handle
-        apps[handle] = String(url.lastPathComponent.split(separator: ".").first!)
+        let applicationName = String(url.lastPathComponent.split(separator: ".").first!)
+        apps[handle] = applicationName
         
         // Starts by reading all the file and extract existing logs from it
         print("Start reading file \(url.absoluteString)")
         handle.readToEndOfFileInBackgroundAndNotify()
+        
+        // Notify delegates
+        delegates.forEach {
+            $0.onNewFileLoading(path: url.absoluteString, applicationName: applicationName)
+        }
+        
     }
     
     private func readChunkData(data: Data, app: String) {

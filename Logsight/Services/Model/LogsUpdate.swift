@@ -11,4 +11,3 @@ enum LogsDiff {
     /// The given rows were removed
     case removed(CountableRange<Int>)
 }
-

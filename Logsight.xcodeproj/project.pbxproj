@@ -34,7 +34,25 @@
 		0F4A714121E1313E007A8C86 /* LogsUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A714021E1313E007A8C86 /* LogsUpdate.swift */; };
 		0F4A714421E15F95007A8C86 /* ApplicationItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A714321E15F95007A8C86 /* ApplicationItemViewController.swift */; };
 		0F4A714621E15FDB007A8C86 /* ApplicationItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F4A714521E15FDB007A8C86 /* ApplicationItemViewController.xib */; };
+		0F4A715621E16F61007A8C86 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0F4A715521E16F61007A8C86 /* Podfile */; };
+		0F4A715A21E172EC007A8C86 /* LogsServiceImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A715921E172EC007A8C86 /* LogsServiceImplTests.swift */; };
+		0F4A715E21E174EF007A8C86 /* FakeFileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A715D21E174EF007A8C86 /* FakeFileLoader.swift */; };
+		0F4A716021E17704007A8C86 /* FakeLogsServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A715F21E17704007A8C86 /* FakeLogsServiceDelegate.swift */; };
+		0F4A716221E17A94007A8C86 /* Log+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A716121E17A94007A8C86 /* Log+Equatable.swift */; };
+		0F4A716521E17ACC007A8C86 /* LogsDiff+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A716421E17ACC007A8C86 /* LogsDiff+Equatable.swift */; };
+		74E3F89EBC36C7A30262B04C /* Pods_LogsightTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F863E748D9827327755FC69 /* Pods_LogsightTests.framework */; };
+		A3E75FFCC20A03D5087DC3DE /* Pods_Logsight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C692811ACDBDF0080F575918 /* Pods_Logsight.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0F4A715021E16E7B007A8C86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0F33D87B21DBB0C600D58F20 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F33D88221DBB0C600D58F20;
+			remoteInfo = Logsight;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0F07CFA621DC0768006B536C /* LogLevelDot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLevelDot.swift; sourceTree = "<group>"; };
@@ -69,6 +87,20 @@
 		0F4A714021E1313E007A8C86 /* LogsUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsUpdate.swift; sourceTree = "<group>"; };
 		0F4A714321E15F95007A8C86 /* ApplicationItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationItemViewController.swift; sourceTree = "<group>"; };
 		0F4A714521E15FDB007A8C86 /* ApplicationItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApplicationItemViewController.xib; sourceTree = "<group>"; };
+		0F4A714B21E16E7B007A8C86 /* LogsightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogsightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F4A714F21E16E7B007A8C86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F4A715521E16F61007A8C86 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		0F4A715921E172EC007A8C86 /* LogsServiceImplTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogsServiceImplTests.swift; sourceTree = "<group>"; };
+		0F4A715D21E174EF007A8C86 /* FakeFileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeFileLoader.swift; sourceTree = "<group>"; };
+		0F4A715F21E17704007A8C86 /* FakeLogsServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLogsServiceDelegate.swift; sourceTree = "<group>"; };
+		0F4A716121E17A94007A8C86 /* Log+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Log+Equatable.swift"; sourceTree = "<group>"; };
+		0F4A716421E17ACC007A8C86 /* LogsDiff+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogsDiff+Equatable.swift"; sourceTree = "<group>"; };
+		2A5BA49655056457E324A9ED /* Pods-LogsightTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogsightTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LogsightTests/Pods-LogsightTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4F863E748D9827327755FC69 /* Pods_LogsightTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LogsightTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CECE605DC6E58B836CED2D3 /* Pods-LogsightTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogsightTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LogsightTests/Pods-LogsightTests.release.xcconfig"; sourceTree = "<group>"; };
+		7652A4ACEB101E1E2B2E79AD /* Pods-Logsight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Logsight.release.xcconfig"; path = "Pods/Target Support Files/Pods-Logsight/Pods-Logsight.release.xcconfig"; sourceTree = "<group>"; };
+		C4633CF729EBF2A7A8974838 /* Pods-Logsight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Logsight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Logsight/Pods-Logsight.debug.xcconfig"; sourceTree = "<group>"; };
+		C692811ACDBDF0080F575918 /* Pods_Logsight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Logsight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +108,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3E75FFCC20A03D5087DC3DE /* Pods_Logsight.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0F4A714821E16E7B007A8C86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74E3F89EBC36C7A30262B04C /* Pods_LogsightTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,10 +186,14 @@
 		0F33D87A21DBB0C600D58F20 = {
 			isa = PBXGroup;
 			children = (
+				0F4A715521E16F61007A8C86 /* Podfile */,
 				0F33D8A721DBCD4000D58F20 /* Medias */,
 				0F33D8A621DBC32B00D58F20 /* README.md */,
 				0F33D88521DBB0C600D58F20 /* Logsight */,
+				0F4A714C21E16E7B007A8C86 /* LogsightTests */,
 				0F33D88421DBB0C600D58F20 /* Products */,
+				D1907C051BDE52AFD5D19746 /* Pods */,
+				6F979D7F9009A108D2161F81 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				0F33D88321DBB0C600D58F20 /* Logsight.app */,
+				0F4A714B21E16E7B007A8C86 /* LogsightTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -232,6 +278,64 @@
 			path = ApplicationItemViewController;
 			sourceTree = "<group>";
 		};
+		0F4A714C21E16E7B007A8C86 /* LogsightTests */ = {
+			isa = PBXGroup;
+			children = (
+				0F4A715B21E172F3007A8C86 /* Services */,
+				0F4A714F21E16E7B007A8C86 /* Info.plist */,
+			);
+			path = LogsightTests;
+			sourceTree = "<group>";
+		};
+		0F4A715B21E172F3007A8C86 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0F4A715C21E172FF007A8C86 /* LogsService */,
+			);
+			name = Services;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		0F4A715C21E172FF007A8C86 /* LogsService */ = {
+			isa = PBXGroup;
+			children = (
+				0F4A716321E17AAA007A8C86 /* TestUtils */,
+				0F4A715921E172EC007A8C86 /* LogsServiceImplTests.swift */,
+			);
+			path = LogsService;
+			sourceTree = "<group>";
+		};
+		0F4A716321E17AAA007A8C86 /* TestUtils */ = {
+			isa = PBXGroup;
+			children = (
+				0F4A715D21E174EF007A8C86 /* FakeFileLoader.swift */,
+				0F4A715F21E17704007A8C86 /* FakeLogsServiceDelegate.swift */,
+				0F4A716121E17A94007A8C86 /* Log+Equatable.swift */,
+				0F4A716421E17ACC007A8C86 /* LogsDiff+Equatable.swift */,
+			);
+			path = TestUtils;
+			sourceTree = "<group>";
+		};
+		6F979D7F9009A108D2161F81 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C692811ACDBDF0080F575918 /* Pods_Logsight.framework */,
+				4F863E748D9827327755FC69 /* Pods_LogsightTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D1907C051BDE52AFD5D19746 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C4633CF729EBF2A7A8974838 /* Pods-Logsight.debug.xcconfig */,
+				7652A4ACEB101E1E2B2E79AD /* Pods-Logsight.release.xcconfig */,
+				2A5BA49655056457E324A9ED /* Pods-LogsightTests.debug.xcconfig */,
+				6CECE605DC6E58B836CED2D3 /* Pods-LogsightTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -239,6 +343,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0F33D89121DBB0C800D58F20 /* Build configuration list for PBXNativeTarget "Logsight" */;
 			buildPhases = (
+				3AD9DE9E41DDC18B689A35EA /* [CP] Check Pods Manifest.lock */,
 				0F33D87F21DBB0C600D58F20 /* Sources */,
 				0F33D88021DBB0C600D58F20 /* Frameworks */,
 				0F33D88121DBB0C600D58F20 /* Resources */,
@@ -252,6 +357,26 @@
 			productReference = 0F33D88321DBB0C600D58F20 /* Logsight.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0F4A714A21E16E7B007A8C86 /* LogsightTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0F4A715221E16E7B007A8C86 /* Build configuration list for PBXNativeTarget "LogsightTests" */;
+			buildPhases = (
+				C67153273FB02808BDFF2554 /* [CP] Check Pods Manifest.lock */,
+				0F4A714721E16E7B007A8C86 /* Sources */,
+				0F4A714821E16E7B007A8C86 /* Frameworks */,
+				0F4A714921E16E7B007A8C86 /* Resources */,
+				8EA5D8C6F5CED1C53E014D8C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0F4A715121E16E7B007A8C86 /* PBXTargetDependency */,
+			);
+			name = LogsightTests;
+			productName = LogsightTests;
+			productReference = 0F4A714B21E16E7B007A8C86 /* LogsightTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -264,6 +389,10 @@
 				TargetAttributes = {
 					0F33D88221DBB0C600D58F20 = {
 						CreatedOnToolsVersion = 10.1;
+					};
+					0F4A714A21E16E7B007A8C86 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 0F33D88221DBB0C600D58F20;
 					};
 				};
 			};
@@ -281,6 +410,7 @@
 			projectRoot = "";
 			targets = (
 				0F33D88221DBB0C600D58F20 /* Logsight */,
+				0F4A714A21E16E7B007A8C86 /* LogsightTests */,
 			);
 		};
 /* End PBXProject section */
@@ -295,11 +425,90 @@
 				0F33D88921DBB0C800D58F20 /* Assets.xcassets in Resources */,
 				0F07CFB521DC0A1A006B536C /* MenuViewController.xib in Resources */,
 				0F33D89A21DBB38000D58F20 /* LogsViewController.xib in Resources */,
+				0F4A715621E16F61007A8C86 /* Podfile in Resources */,
 				0F33D88C21DBB0C800D58F20 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0F4A714921E16E7B007A8C86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3AD9DE9E41DDC18B689A35EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Logsight-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8EA5D8C6F5CED1C53E014D8C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LogsightTests/Pods-LogsightTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LogsightTests/Pods-LogsightTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C67153273FB02808BDFF2554 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LogsightTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0F33D87F21DBB0C600D58F20 /* Sources */ = {
@@ -330,7 +539,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0F4A714721E16E7B007A8C86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F4A715A21E172EC007A8C86 /* LogsServiceImplTests.swift in Sources */,
+				0F4A715E21E174EF007A8C86 /* FakeFileLoader.swift in Sources */,
+				0F4A716021E17704007A8C86 /* FakeLogsServiceDelegate.swift in Sources */,
+				0F4A716521E17ACC007A8C86 /* LogsDiff+Equatable.swift in Sources */,
+				0F4A716221E17A94007A8C86 /* Log+Equatable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0F4A715121E16E7B007A8C86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0F33D88221DBB0C600D58F20 /* Logsight */;
+			targetProxy = 0F4A715021E16E7B007A8C86 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0F33D88A21DBB0C800D58F20 /* MainMenu.xib */ = {
@@ -461,9 +690,11 @@
 		};
 		0F33D89221DBB0C800D58F20 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4633CF729EBF2A7A8974838 /* Pods-Logsight.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Logsight/Logsight.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 4A25ZE88R7;
@@ -474,15 +705,18 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.joanzapata.Logsight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
 		0F33D89321DBB0C800D58F20 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7652A4ACEB101E1E2B2E79AD /* Pods-Logsight.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Logsight/Logsight.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 4A25ZE88R7;
@@ -493,7 +727,54 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.joanzapata.Logsight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		0F4A715321E16E7B007A8C86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A5BA49655056457E324A9ED /* Pods-LogsightTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4A25ZE88R7;
+				INFOPLIST_FILE = LogsightTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.joanzapata.LogsightTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Logsight.app/Contents/MacOS/Logsight";
+			};
+			name = Debug;
+		};
+		0F4A715421E16E7B007A8C86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CECE605DC6E58B836CED2D3 /* Pods-LogsightTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4A25ZE88R7;
+				INFOPLIST_FILE = LogsightTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.joanzapata.LogsightTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Logsight.app/Contents/MacOS/Logsight";
 			};
 			name = Release;
 		};
@@ -514,6 +795,15 @@
 			buildConfigurations = (
 				0F33D89221DBB0C800D58F20 /* Debug */,
 				0F33D89321DBB0C800D58F20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0F4A715221E16E7B007A8C86 /* Build configuration list for PBXNativeTarget "LogsightTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F4A715321E16E7B007A8C86 /* Debug */,
+				0F4A715421E16E7B007A8C86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -3,7 +3,7 @@ import Foundation
 class MenuViewModel {
     
     var logLevels: [String] = []
-    var applications: [String] = []
+    var applications: [Application] = []
     var delegate: MenuViewModelDelegate? {
         didSet {
             delegate?.onLogLevelsChange(logLevels: logLevels)
@@ -11,15 +11,15 @@ class MenuViewModel {
         }
     }
     
-    init(fileLoader: FileLoader) {
-        fileLoader.addDelegate(delegate: self)
+    init(logsService: LogsService) {
+        logsService.addDelegate(self)
     }
 }
 
-extension MenuViewModel: FileLoaderDelegate {
+extension MenuViewModel: LogsServiceDelegate {
     
-    func onNewFileLoading(path: String, applicationName: String) {
-        applications.append(applicationName)
+    func onStartListening(toApplication application: Application) {
+        applications.append(application)
         delegate?.onApplicationsChange(applications: applications)
     }
 }
@@ -28,5 +28,5 @@ protocol MenuViewModelDelegate {
     
     func onLogLevelsChange(logLevels: [String])
     
-    func onApplicationsChange(applications: [String])
+    func onApplicationsChange(applications: [Application])
 }

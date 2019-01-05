@@ -32,19 +32,26 @@ class LogsViewController : NSViewController {
     }
 }
 
-extension LogsViewController : MainViewModelDelegate {
+extension LogsViewController : LogsViewModelDelegate {
     
-    func logsDidUpdate(update: LogsUpdate) {
+    func logsDidUpdate(update: [LogsDiff]) {
         let lastVisibleRow = tableView.rows(in: tableView.visibleRect).upperBound
         let shouldScrollToEndAfterUpdate = lastVisibleRow >= tableView.numberOfRows - 1
         
-        switch update {
-        case .added(let indexes):
-            let range: CountableRange<IndexSet.Element> = indexes
-            tableView.beginUpdates()
-            tableView.insertRows(at: IndexSet(integersIn: range), withAnimation: .effectGap)
-            tableView.endUpdates()
+        // Apply the logs diff
+        tableView.beginUpdates()
+        
+        update.forEach { diff in
+            switch diff {
+            case .added(let indexes):
+                let range: CountableRange<IndexSet.Element> = indexes
+                tableView.insertRows(at: IndexSet(integersIn: range), withAnimation: .effectGap)
+            case .removed(let indexes):
+                let range: CountableRange<IndexSet.Element> = indexes
+                tableView.removeRows(at: IndexSet(integersIn: range), withAnimation: .effectGap)
+            }
         }
+        tableView.endUpdates()
         
         if shouldScrollToEndAfterUpdate {
             tableView.scrollToEndOfDocument(nil)
@@ -75,7 +82,7 @@ extension LogsViewController: NSTableViewDataSource, NSTableViewDelegate {
         
         switch column {
         case "__date": cell.textField?.stringValue = LogsViewController.dateFormatter.string(from: item.date)
-        case "__app": cell.textField?.stringValue = item.appName
+        case "__app": cell.textField?.stringValue = item.application.name
         case "__message": (cell as! MessageTableCellView).setup(text: item.message, logLevel: item.level, columnWidth: columnWidth)
         default: cell.textField?.stringValue = item.data[column]!
         }

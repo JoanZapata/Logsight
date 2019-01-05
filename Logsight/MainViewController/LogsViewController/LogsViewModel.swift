@@ -6,36 +6,29 @@ class LogsViewModel {
     
     private(set) var columns: Set<String> = []
     
-    var delegate: MainViewModelDelegate?
+    var delegate: LogsViewModelDelegate?
     
-    let fileLoader: FileLoader
+    let logsService: LogsService
     
-    init(fileLoader: FileLoader) {
-        self.fileLoader = fileLoader
-        fileLoader.addDelegate(delegate: self)
+    init(logsService: LogsService) {
+        self.logsService = logsService
+        self.logsService.addDelegate(self)
     }
     
     func loadNewFile(url: URL) {
-        fileLoader.loadFile(withURL: url)
+        logsService.startReading(fileWithUrl: url)
     }
 }
 
-extension LogsViewModel : FileLoaderDelegate {
+extension LogsViewModel : LogsServiceDelegate {
     
-    func onNewLogsLoaded(_ logs: [Log]) {
-        let initialSize = self.logs.count
-        self.logs.append(contentsOf: logs)
-        let finalSize = self.logs.count
-        delegate?.logsDidUpdate(update: .added(initialSize..<finalSize))
+    func onLogsChanged(withDiffs diffs: [LogsDiff]) {
+        self.logs = logsService.logs
+        delegate?.logsDidUpdate(update: diffs)
     }
 }
 
-protocol MainViewModelDelegate {
+protocol LogsViewModelDelegate {
     
-    func logsDidUpdate(update: LogsUpdate)
-}
-
-enum LogsUpdate {
-    
-    case added(CountableRange<Int>)
+    func logsDidUpdate(update: [LogsDiff])
 }

@@ -1,14 +1,16 @@
 import Foundation
 
-/// Singleton service used throughout the rest of the app to read log files.
-/// Loading files is asynchronous, resulting logs can be retrieved by adding
-/// a delegate.
+/// Singleton service to read log files. Loading files is asynchronous,
+/// resulting logs can be retrieved by adding a delegate.
 protocol FileLoader {
     
-    /// Adds a new delegate. To simplify state synchronization, this new
-    /// delegate immediately receives previous data (past logs), then
+    /// Sets the delegate. To simplify state synchronization, this new
+    /// delegate immediately receives previous data (past logs), it then
     /// receives new ones as they arrive.
-    func addDelegate(delegate: FileLoaderDelegate)
+    var delegate: FileLoaderDelegate? { get set }
+    
+    /// Start reading previously retained security bookmarks.
+    func startReadingExistingSecurityBookmarks()
     
     /// Triggers reading and parsing a new file, asynchronously.
     func loadFile(withURL url: URL)

@@ -27,6 +27,11 @@
 		0F33D89A21DBB38000D58F20 /* LogsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F33D89921DBB38000D58F20 /* LogsViewController.xib */; };
 		0F33D89D21DBB70300D58F20 /* DropZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F33D89C21DBB70300D58F20 /* DropZone.swift */; };
 		0F33D8A521DBB88D00D58F20 /* LogsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F33D8A421DBB88D00D58F20 /* LogsViewModel.swift */; };
+		0F4A713921E12AAC007A8C86 /* LogsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A713821E12AAC007A8C86 /* LogsService.swift */; };
+		0F4A713B21E12AC9007A8C86 /* LogsServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A713A21E12AC9007A8C86 /* LogsServiceImpl.swift */; };
+		0F4A713D21E12ADF007A8C86 /* LogsServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A713C21E12ADF007A8C86 /* LogsServiceDelegate.swift */; };
+		0F4A713F21E12FCD007A8C86 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A713E21E12FCD007A8C86 /* Application.swift */; };
+		0F4A714121E1313E007A8C86 /* LogsUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A714021E1313E007A8C86 /* LogsUpdate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +60,11 @@
 		0F33D8A421DBB88D00D58F20 /* LogsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsViewModel.swift; sourceTree = "<group>"; };
 		0F33D8A621DBC32B00D58F20 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0F33D8AA21DBCD5F00D58F20 /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = "<group>"; };
+		0F4A713821E12AAC007A8C86 /* LogsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsService.swift; sourceTree = "<group>"; };
+		0F4A713A21E12AC9007A8C86 /* LogsServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsServiceImpl.swift; sourceTree = "<group>"; };
+		0F4A713C21E12ADF007A8C86 /* LogsServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsServiceDelegate.swift; sourceTree = "<group>"; };
+		0F4A713E21E12FCD007A8C86 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		0F4A714021E1313E007A8C86 /* LogsUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsUpdate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +120,8 @@
 		0F07CFB821DC1C5E006B536C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				0F07CFBB21DC1D73006B536C /* Model */,
+				0F4A713721E12A8C007A8C86 /* LogsService */,
 				0F4A713621E12A50007A8C86 /* FileLoader */,
 			);
 			path = Services;
@@ -120,6 +132,8 @@
 			children = (
 				0F07CFBC21DC1D7F006B536C /* Log.swift */,
 				0F07CFBE21DC1D91006B536C /* LogLevel.swift */,
+				0F4A713E21E12FCD007A8C86 /* Application.swift */,
+				0F4A714021E1313E007A8C86 /* LogsUpdate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,12 +201,21 @@
 		0F4A713621E12A50007A8C86 /* FileLoader */ = {
 			isa = PBXGroup;
 			children = (
-				0F07CFBB21DC1D73006B536C /* Model */,
 				0F07CFB921DC1C8A006B536C /* FileLoader.swift */,
 				0F07CFC021DC1FA8006B536C /* FileLoaderImpl.swift */,
 				0F07CFC221DC1FC1006B536C /* FileLoaderDelegate.swift */,
 			);
 			path = FileLoader;
+			sourceTree = "<group>";
+		};
+		0F4A713721E12A8C007A8C86 /* LogsService */ = {
+			isa = PBXGroup;
+			children = (
+				0F4A713821E12AAC007A8C86 /* LogsService.swift */,
+				0F4A713A21E12AC9007A8C86 /* LogsServiceImpl.swift */,
+				0F4A713C21E12ADF007A8C86 /* LogsServiceDelegate.swift */,
+			);
+			path = LogsService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,7 +293,10 @@
 			files = (
 				0F07CFC321DC1FC1006B536C /* FileLoaderDelegate.swift in Sources */,
 				0F07CFAC21DC083B006B536C /* MainViewController.swift in Sources */,
+				0F4A713921E12AAC007A8C86 /* LogsService.swift in Sources */,
+				0F4A713F21E12FCD007A8C86 /* Application.swift in Sources */,
 				0F07CFA821DC0768006B536C /* LogLevelDot.swift in Sources */,
+				0F4A713B21E12AC9007A8C86 /* LogsServiceImpl.swift in Sources */,
 				0F07CFBD21DC1D7F006B536C /* Log.swift in Sources */,
 				0F33D8A521DBB88D00D58F20 /* LogsViewModel.swift in Sources */,
 				0F07CFBA21DC1C8A006B536C /* FileLoader.swift in Sources */,
@@ -283,6 +309,8 @@
 				0F33D89621DBB22500D58F20 /* LogsViewController.swift in Sources */,
 				0F07CFA921DC0768006B536C /* MessageTableCellView.swift in Sources */,
 				0F07CFB021DC089E006B536C /* MainViewModel.swift in Sources */,
+				0F4A713D21E12ADF007A8C86 /* LogsServiceDelegate.swift in Sources */,
+				0F4A714121E1313E007A8C86 /* LogsUpdate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

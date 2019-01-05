@@ -22,11 +22,7 @@ class MenuViewController : NSViewController {
 
 extension MenuViewController : MenuViewModelDelegate {
     
-    func onLogLevelsChange(logLevels: [String]) {
-        // TODO
-    }
-    
-    func onApplicationsChange(applications: [String]) {
+    func onApplicationsChange(applications: [Application]) {
         applicationStackView.subviews = []
         
         if applications.isEmpty {
@@ -39,11 +35,15 @@ extension MenuViewController : MenuViewModelDelegate {
             applicationStackView.addArrangedSubview(placeholder)
             return
         }
-
+        
         applications.forEach {
-            let button = NSButton(checkboxWithTitle: $0, target: nil, action: nil)
+            let button = NSButton(checkboxWithTitle: $0.name, target: nil, action: nil)
             button.state = .on
             applicationStackView.addArrangedSubview(button)
         }
+    }
+    
+    func onLogLevelsChange(logLevels: [String]) {
+        // TODO
     }
 }

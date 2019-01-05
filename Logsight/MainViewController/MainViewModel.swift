@@ -5,8 +5,8 @@ class MainViewModel {
     let logsViewModel: LogsViewModel
     let menuViewModel: MenuViewModel
     
-    init(fileLoader: FileLoader) {
-        self.logsViewModel = LogsViewModel(fileLoader: fileLoader)
-        self.menuViewModel = MenuViewModel(fileLoader: fileLoader)
+    init(logsService: LogsService) {
+        self.logsViewModel = LogsViewModel(logsService: logsService)
+        self.menuViewModel = MenuViewModel(logsService: logsService)
     }
 }

@@ -10,7 +10,7 @@ struct Log {
     
     /// The application name, as deducted from the name
     /// of the file that was dropped.
-    let appName: String
+    let application: Application
     
     /// The log level.
     let level: LogLevel

@@ -8,20 +8,26 @@ class FileLoaderImpl: FileLoader {
         return formatter
     }()
     
-    private var apps: [FileHandle: String] = [:]
+    var delegate: FileLoaderDelegate?
     
-    private var delegates: [FileLoaderDelegate] = []
+    private var apps: [FileHandle: Application] = [:]
     
-    private(set) var logs: [Log] = []
-    
-    private var fileBookmarks: [String: Data] =
-        (UserDefaults.standard.dictionary(forKey: "bookmarks")) as? [String : Data] ?? [:] {
+    private var fileBookmarks: [String: Data] {
         didSet {
             UserDefaults.standard.set(fileBookmarks, forKey: "bookmarks")
         }
     }
     
     init() {
+        
+        // Reload file bookmarks
+        self.fileBookmarks = UserDefaults.standard.dictionary(forKey: "bookmarks")
+            as? [String : Data] ?? [:]
+        
+        // Register the file loader to the notification center. Each read operation
+        // on files is done using the notification center API, which allows not to
+        // have to deal with threads.
+        
         let handleChunkRead: (Notification) -> Void = { notification in
             let fileHandle = notification.object as! FileHandle
             let data = notification.userInfo![NSFileHandleNotificationDataItem] as! Data
@@ -46,20 +52,10 @@ class FileLoaderImpl: FileLoader {
                 let fileHandle = notification.object as! FileHandle
                 fileHandle.readInBackgroundAndNotify()
         })
-        
-        // Load previously saved file bookmarks
-        fileBookmarks.forEach({(key, value) in loadBookMarkData(bookmarkData: value)})
     }
     
-    func addDelegate(delegate: FileLoaderDelegate) {
-        self.delegates.append(delegate)
-        
-        // Immediately make the right call so that the
-        // delegate can catch up on past events
-        delegate.onNewLogsLoaded(logs)
-        apps.forEach { key, value in
-            delegate.onNewFileLoading(path: value, applicationName: value)
-        }
+    func startReadingExistingSecurityBookmarks() {
+        fileBookmarks.forEach({(key, value) in loadBookMarkData(bookmarkData: value)})
     }
     
     func loadFile(withURL url: URL) {
@@ -116,20 +112,21 @@ class FileLoaderImpl: FileLoader {
         
         // Retain the app name related to this file handle
         let applicationName = String(url.lastPathComponent.split(separator: ".").first!)
-        apps[handle] = applicationName
+        let application = Application(
+            name: applicationName,
+            filePath: url.absoluteString
+        )
+        apps[handle] = application
         
         // Starts by reading all the file and extract existing logs from it
         print("Start reading file \(url.absoluteString)")
         handle.readToEndOfFileInBackgroundAndNotify()
         
         // Notify delegates
-        delegates.forEach {
-            $0.onNewFileLoading(path: url.absoluteString, applicationName: applicationName)
-        }
-        
+        delegate?.onNewFileLoading(application: application)
     }
     
-    private func readChunkData(data: Data, app: String) {
+    private func readChunkData(data: Data, app: Application) {
         guard let text = String(data: data, encoding: .utf8) else {
             print("Unable to read incoming data as UTF8.")
             return
@@ -191,14 +188,12 @@ class FileLoaderImpl: FileLoader {
             
             // Create a Log from the gathered data
             return Log(
-                date: date, appName: app,
+                date: date, application: app,
                 level: level, message: message.trimmingCharacters(in: ["\n", " "]),
                 data: data
             )
         }
-        
-        // Append the logs and notify the delegate
-        logs.append(contentsOf: newLogs)
-        delegates.forEach { $0.onNewLogsLoaded(newLogs) }
+    
+        delegate?.onNewLogsLoaded(newLogs)
     }
 }

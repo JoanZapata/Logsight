@@ -31,7 +31,8 @@ class FileLoaderImpl: FileLoader {
         let handleChunkRead: (Notification) -> Void = { notification in
             let fileHandle = notification.object as! FileHandle
             let data = notification.userInfo![NSFileHandleNotificationDataItem] as! Data
-            self.readChunkData(data: data, app: self.apps[fileHandle]!)
+            guard let app = self.apps[fileHandle] else { return }
+            self.readChunkData(data: data, app: app)
             fileHandle.waitForDataInBackgroundAndNotify()
         }
         
@@ -195,5 +196,15 @@ class FileLoaderImpl: FileLoader {
         }
     
         delegate?.onNewLogsLoaded(newLogs)
+    }
+    
+    func stopReadingAndForget(application: Application) {
+        guard
+            let appIndex = apps.firstIndex(where: { $0.value.filePath == application.filePath }),
+            let bookmarkIndex = fileBookmarks.firstIndex(where: { $0.key == application.filePath })
+            else { return }
+    
+        apps.remove(at: appIndex)
+        fileBookmarks.remove(at: bookmarkIndex)
     }
 }

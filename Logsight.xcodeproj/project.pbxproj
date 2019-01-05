@@ -32,6 +32,8 @@
 		0F4A713D21E12ADF007A8C86 /* LogsServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A713C21E12ADF007A8C86 /* LogsServiceDelegate.swift */; };
 		0F4A713F21E12FCD007A8C86 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A713E21E12FCD007A8C86 /* Application.swift */; };
 		0F4A714121E1313E007A8C86 /* LogsUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A714021E1313E007A8C86 /* LogsUpdate.swift */; };
+		0F4A714421E15F95007A8C86 /* ApplicationItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A714321E15F95007A8C86 /* ApplicationItemViewController.swift */; };
+		0F4A714621E15FDB007A8C86 /* ApplicationItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F4A714521E15FDB007A8C86 /* ApplicationItemViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,8 @@
 		0F4A713C21E12ADF007A8C86 /* LogsServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsServiceDelegate.swift; sourceTree = "<group>"; };
 		0F4A713E21E12FCD007A8C86 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		0F4A714021E1313E007A8C86 /* LogsUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsUpdate.swift; sourceTree = "<group>"; };
+		0F4A714321E15F95007A8C86 /* ApplicationItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationItemViewController.swift; sourceTree = "<group>"; };
+		0F4A714521E15FDB007A8C86 /* ApplicationItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApplicationItemViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 		0F07CFB121DC09E9006B536C /* MenuViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0F4A714221E15F6B007A8C86 /* ApplicationItemViewController */,
 				0F07CFB221DC0A0E006B536C /* MenuViewController.swift */,
 				0F07CFB421DC0A1A006B536C /* MenuViewController.xib */,
 				0F07CFB621DC0A23006B536C /* MenuViewModel.swift */,
@@ -218,6 +223,15 @@
 			path = LogsService;
 			sourceTree = "<group>";
 		};
+		0F4A714221E15F6B007A8C86 /* ApplicationItemViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0F4A714321E15F95007A8C86 /* ApplicationItemViewController.swift */,
+				0F4A714521E15FDB007A8C86 /* ApplicationItemViewController.xib */,
+			);
+			path = ApplicationItemViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -276,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F4A714621E15FDB007A8C86 /* ApplicationItemViewController.xib in Resources */,
 				0F07CFAE21DC0856006B536C /* MainViewController.xib in Resources */,
 				0F33D88921DBB0C800D58F20 /* Assets.xcassets in Resources */,
 				0F07CFB521DC0A1A006B536C /* MenuViewController.xib in Resources */,
@@ -295,6 +310,7 @@
 				0F07CFAC21DC083B006B536C /* MainViewController.swift in Sources */,
 				0F4A713921E12AAC007A8C86 /* LogsService.swift in Sources */,
 				0F4A713F21E12FCD007A8C86 /* Application.swift in Sources */,
+				0F4A714421E15F95007A8C86 /* ApplicationItemViewController.swift in Sources */,
 				0F07CFA821DC0768006B536C /* LogLevelDot.swift in Sources */,
 				0F4A713B21E12AC9007A8C86 /* LogsServiceImpl.swift in Sources */,
 				0F07CFBD21DC1D7F006B536C /* Log.swift in Sources */,

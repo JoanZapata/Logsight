@@ -29,7 +29,14 @@ class LogsServiceImpl: LogsService {
     }
     
     func stopReading(application: Application) {
+        // Remove all logs
         // TODO
+        
+        // Stop reading the application log file
+        fileLoader.stopReadingAndForget(application: application)
+        
+        // Notify delegates
+        delegates.forEach { $0.onStopListening(toApplication: application) }
     }
     
     func setLogLevelFilter(logLevel: LogLevel?) {

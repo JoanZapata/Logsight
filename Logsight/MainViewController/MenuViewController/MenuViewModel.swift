@@ -11,8 +11,15 @@ class MenuViewModel {
         }
     }
     
+    private let logsService: LogsService
+    
     init(logsService: LogsService) {
-        logsService.addDelegate(self)
+        self.logsService = logsService
+        self.logsService.addDelegate(self)
+    }
+    
+    func removeApplication(_ application: Application) {
+        logsService.stopReading(application: application)
     }
 }
 
@@ -20,6 +27,13 @@ extension MenuViewModel: LogsServiceDelegate {
     
     func onStartListening(toApplication application: Application) {
         applications.append(application)
+        delegate?.onApplicationsChange(applications: applications)
+    }
+    
+    func onStopListening(toApplication application: Application) {
+        guard let index = applications.firstIndex(where: { $0.filePath == application.filePath })
+            else { return }
+        applications.remove(at: index)
         delegate?.onApplicationsChange(applications: applications)
     }
 }

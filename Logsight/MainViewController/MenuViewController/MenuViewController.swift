@@ -6,6 +6,8 @@ class MenuViewController : NSViewController {
     
     @IBOutlet weak var applicationStackView: NSStackView!
     
+    private var applicationViews: [ApplicationItemViewController] = []
+    
     init(viewModel: MenuViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -36,14 +38,22 @@ extension MenuViewController : MenuViewModelDelegate {
             return
         }
         
-        applications.forEach {
-            let button = NSButton(checkboxWithTitle: $0.name, target: nil, action: nil)
-            button.state = .on
-            applicationStackView.addArrangedSubview(button)
+        applications.forEach { app in
+            let button = ApplicationItemViewController(delegate: self, application: app)
+           
+            applicationViews.append(button)
+            applicationStackView.addArrangedSubview(button.view)
         }
     }
     
     func onLogLevelsChange(logLevels: [String]) {
         // TODO
+    }
+}
+
+extension MenuViewController : ApplicationItemViewControllerDelegate {
+
+    func onRemoveClicked(forApplication application: Application) {
+        viewModel.removeApplication(application)
     }
 }

@@ -14,4 +14,8 @@ protocol FileLoader {
     
     /// Triggers reading and parsing a new file, asynchronously.
     func loadFile(withURL url: URL)
+    
+    /// Stops reading the application log file and forget
+    /// the security bookmark.
+    func stopReadingAndForget(application: Application)
 }

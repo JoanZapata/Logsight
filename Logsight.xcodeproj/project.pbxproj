@@ -110,10 +110,7 @@
 		0F07CFB821DC1C5E006B536C /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				0F07CFBB21DC1D73006B536C /* Model */,
-				0F07CFB921DC1C8A006B536C /* FileLoader.swift */,
-				0F07CFC021DC1FA8006B536C /* FileLoaderImpl.swift */,
-				0F07CFC221DC1FC1006B536C /* FileLoaderDelegate.swift */,
+				0F4A713621E12A50007A8C86 /* FileLoader */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -185,6 +182,17 @@
 				0F33D8AA21DBCD5F00D58F20 /* screenshot.png */,
 			);
 			path = Medias;
+			sourceTree = "<group>";
+		};
+		0F4A713621E12A50007A8C86 /* FileLoader */ = {
+			isa = PBXGroup;
+			children = (
+				0F07CFBB21DC1D73006B536C /* Model */,
+				0F07CFB921DC1C8A006B536C /* FileLoader.swift */,
+				0F07CFC021DC1FA8006B536C /* FileLoaderImpl.swift */,
+				0F07CFC221DC1FC1006B536C /* FileLoaderDelegate.swift */,
+			);
+			path = FileLoader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

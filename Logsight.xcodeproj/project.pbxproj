@@ -122,7 +122,6 @@
 			children = (
 				0F07CFBB21DC1D73006B536C /* Model */,
 				0F4A713721E12A8C007A8C86 /* LogsService */,
-				0F4A713621E12A50007A8C86 /* FileLoader */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -211,6 +210,7 @@
 		0F4A713721E12A8C007A8C86 /* LogsService */ = {
 			isa = PBXGroup;
 			children = (
+				0F4A713621E12A50007A8C86 /* FileLoader */,
 				0F4A713821E12AAC007A8C86 /* LogsService.swift */,
 				0F4A713A21E12AC9007A8C86 /* LogsServiceImpl.swift */,
 				0F4A713C21E12ADF007A8C86 /* LogsServiceDelegate.swift */,

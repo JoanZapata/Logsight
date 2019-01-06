@@ -12,6 +12,40 @@ class ArrayDifferentialTests: QuickSpec {
     }
     
     override func spec() {
+        describe("differentialFilter") {
+            context("when the initial list is empty") {
+                let emptyList: [Int] = []
+             
+                it("does nothing") {
+                    let (newList, diffs) = emptyList.differentialFilter(onlyKeep: { $0 == 1 })
+                    
+                    expect(newList).to(beEmpty())
+                    expect(diffs.added).to(beEmpty())
+                    expect(diffs.removed).to(beEmpty())
+                }
+            }
+            
+            context("when the list contains elements") {
+                let list = [5, 6, 6, 10, 10, 12, 15]
+                
+                it("can filter out doublons, first and last elements") {
+                    let (newList, diffs) = list.differentialFilter(onlyKeep: { [6, 12].contains($0) })
+                    
+                    expect(newList).to(equal([6, 6, 12]))
+                    expect(diffs.added).to(beEmpty())
+                    expect(diffs.removed).to(equal([6, 4, 3, 0]))
+                }
+                
+                it("can filter everything") {
+                    let (newList, diffs) = list.differentialFilter(onlyKeep: { elem in false })
+                    
+                    expect(newList).to(equal([]))
+                    expect(diffs.added).to(beEmpty())
+                    expect(diffs.removed).to(equal([Int](0..<7).reversed()))
+                }
+            }
+        }
+        
         describe("differentialAdd") {
             context("when the initial list is empty") {
                 let emptyList: [Int] = []

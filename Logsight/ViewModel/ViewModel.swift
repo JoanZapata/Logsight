@@ -1,6 +1,9 @@
 import Foundation
 
 class ViewModel {
+    
+    private static let ORDER_BY_LOG_DATE: (Log, Log) -> ComparisonResult =
+        { a, b in a.date.compare(b.date) }
 
     /// Contains all the logs.
     private var allLogs: [Log] = []
@@ -47,13 +50,20 @@ class ViewModel {
     /// Use the name given by the delegate.
     func stopReading(application: Application) {
         // Remove all logs
-        // TODO
+        let (newLogs, diffs) = allLogs.differentialFilter(
+            onlyKeep: { $0.application.filePath != application.filePath}
+        )
+        allLogs = newLogs
+        logs = newLogs
         
         // Stop reading the application log file
         fileLoader.stopReadingAndForget(application: application)
         
         // Notify delegates
-        delegates.forEach { $0.onStopListening(toApplication: application) }
+        delegates.forEach {
+            $0.onLogsChanged(withDiffs: diffs)
+            $0.onStopListening(toApplication: application)
+        }
     }
     
     /// Sets the log level filter. If set to null, it retains
@@ -78,8 +88,10 @@ extension ViewModel : FileLoaderDelegate {
     }
     
     func onNewLogsLoaded(_ logs: [Log]) {
-        let logDateAscending: (Log, Log) -> ComparisonResult = { a, b in a.date.compare(b.date) }
-        let (newLogs, diffs) = self.allLogs.differentialAdd(logs, orderWith: logDateAscending)
+        let (newLogs, diffs) = self.allLogs.differentialAdd(
+            logs, orderWith: ViewModel.ORDER_BY_LOG_DATE
+        )
+        
         self.allLogs = newLogs
         self.logs = newLogs
         

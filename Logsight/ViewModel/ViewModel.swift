@@ -1,6 +1,6 @@
 import Foundation
 
-class LogsServiceImpl: LogsService {
+class ViewModel {
 
     /// Contains all the logs.
     private var allLogs: [Log] = []
@@ -14,25 +14,37 @@ class LogsServiceImpl: LogsService {
     
     /// The list of delegates to notify when there's
     /// a change in the logs.
-    private var delegates: [LogsServiceDelegate] = []
+    private var delegates: [ViewModelDelegate] = []
     
     init(fileLoader: FileLoader) {
         self.fileLoader = fileLoader
         self.fileLoader.delegate = self
     }
     
-    func addDelegate(_ delegate: LogsServiceDelegate) {
+    /// All `ViewModel` functions are asynchronous by design.
+    /// Implement this delegate to receive updates.
+    func addDelegate(_ delegate: ViewModelDelegate) {
         delegates.append(delegate)
     }
     
+    /// Start reading from all files previously retained
+    /// using `startReadingNewFile(withUrl:)` if they still exist.
+    /// Should be called once when the app starts.
     func startReadingPreviouslyAddedApplications() {
         fileLoader.startReadingExistingSecurityBookmarks()
     }
     
+    /// Start reading from a new file. Note that it retains
+    /// a security bookmark and persists it so that it can
+    /// be read again using `startReadingExistingSecurityBookmarks`
+    /// automatically read on the next app start.
     func startReading(fileWithUrl url: URL) {
         fileLoader.loadFile(withURL: url)
     }
     
+    /// Stop listening to the given file name and delete the
+    /// associated security bookmark to completely forget about it.
+    /// Use the name given by the delegate.
     func stopReading(application: Application) {
         // Remove all logs
         // TODO
@@ -44,16 +56,22 @@ class LogsServiceImpl: LogsService {
         delegates.forEach { $0.onStopListening(toApplication: application) }
     }
     
+    /// Sets the log level filter. If set to null, it retains
+    /// all logs. If set to any log level, it only retains
+    /// log levels that are equal to it or higher.
     func setLogLevelFilter(logLevel: LogLevel?) {
         // TODO
     }
     
+    /// Sets the application filter. If set to null, it retinas
+    /// all applications. Otherwise logs than don't belong to
+    /// the given applications are filtered out.
     func setApplicationFilter(applications: [Application]?) {
         // TODO
     }
 }
 
-extension LogsServiceImpl : FileLoaderDelegate {
+extension ViewModel : FileLoaderDelegate {
     
     func onNewFileLoading(application: Application) {
         delegates.forEach { $0.onStartListening(toApplication: application) }

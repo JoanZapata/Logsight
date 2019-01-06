@@ -2,13 +2,14 @@ import Cocoa
 
 class MenuViewController : NSViewController {
     
-    let viewModel: MenuViewModel
+    let viewModel: ViewModel
     
     @IBOutlet weak var applicationStackView: NSStackView!
     
+    private var applications: [Application] = []
     private var applicationViews: [ApplicationItemViewController] = []
     
-    init(viewModel: MenuViewModel) {
+    init(viewModel: ViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -18,15 +19,25 @@ class MenuViewController : NSViewController {
     }
     
     override func viewDidLoad() {
-        viewModel.delegate = self
+        viewModel.addDelegate(self)
+        updateApplications()
     }
 }
 
-extension MenuViewController : MenuViewModelDelegate {
+extension MenuViewController : ViewModelDelegate {
     
-    func onApplicationsChange(applications: [Application]) {
+    func onStartListening(toApplication application: Application) {
+        self.applications.append(application)
+        updateApplications()
+    }
+    
+    func onStopListening(toApplication application: Application) {
+        self.applications.removeAll(where: { $0.filePath == application.filePath })
+        updateApplications()
+    }
+    
+    func updateApplications() {
         applicationStackView.subviews = []
-        
         if applications.isEmpty {
             let placeholder = NSTextField()
             placeholder.isEditable = false
@@ -40,20 +51,16 @@ extension MenuViewController : MenuViewModelDelegate {
         
         applications.forEach { app in
             let button = ApplicationItemViewController(delegate: self, application: app)
-           
+            
             applicationViews.append(button)
             applicationStackView.addArrangedSubview(button.view)
         }
-    }
-    
-    func onLogLevelsChange(logLevels: [String]) {
-        // TODO
     }
 }
 
 extension MenuViewController : ApplicationItemViewControllerDelegate {
 
     func onRemoveClicked(forApplication application: Application) {
-        viewModel.removeApplication(application)
+        viewModel.stopReading(application: application)
     }
 }

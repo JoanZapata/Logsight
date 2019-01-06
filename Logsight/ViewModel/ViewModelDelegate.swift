@@ -1,9 +1,9 @@
 import Foundation
 
-/// All `LogsService` functions are asynchronous by design.
+/// All `ViewModel` functions are asynchronous by design.
 /// Implement this delegate to receive updates. All functions
 /// are optional.
-protocol LogsServiceDelegate {
+protocol ViewModelDelegate {
     
     func onStartListening(toApplication application: Application)
     
@@ -18,7 +18,7 @@ protocol LogsServiceDelegate {
 
 // Make all functions optional by providing
 // a default no-op implementation
-extension LogsServiceDelegate {
+extension ViewModelDelegate {
 
     func onStartListening(toApplication application: Application){ }
     

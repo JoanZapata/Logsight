@@ -12,9 +12,9 @@ class LogsViewController : NSViewController {
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var dropZone: DropZone!
     
-    let viewModel: LogsViewModel
+    let viewModel: ViewModel
     
-    init(viewModel: LogsViewModel) {
+    init(viewModel: ViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -28,22 +28,22 @@ class LogsViewController : NSViewController {
         tableView.delegate = self
         tableView.dataSource = self
         dropZone.dropZoneDelegate = self
-        viewModel.delegate = self
+        viewModel.addDelegate(self)
     }
 }
 
-extension LogsViewController : LogsViewModelDelegate {
+extension LogsViewController : ViewModelDelegate {
     
-    func logsDidUpdate(update: Diffs) {
+    func onLogsChanged(withDiffs diffs: Diffs) {
         let lastVisibleRow = tableView.rows(in: tableView.visibleRect).upperBound
         let shouldScrollToEndAfterUpdate = lastVisibleRow >= tableView.numberOfRows - 1
         
         // Apply the logs diff
         tableView.beginUpdates()
-        update.added.forEach {
+        diffs.added.forEach {
             tableView.insertRows(at: IndexSet(integer: $0), withAnimation: .effectGap)
         }
-        update.removed.forEach {
+        diffs.removed.forEach {
             tableView.removeRows(at: IndexSet(integer: $0), withAnimation: .effectGap)
         }
         tableView.endUpdates()
@@ -57,7 +57,7 @@ extension LogsViewController : LogsViewModelDelegate {
 extension LogsViewController : DropZoneDelegate {
     
     func fileDropped(url: URL) {
-        viewModel.loadNewFile(url: url)
+        viewModel.startReading(fileWithUrl: url)
     }
 }
 

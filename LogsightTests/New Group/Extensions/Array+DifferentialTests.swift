@@ -13,7 +13,6 @@ class ArrayDifferentialTests: QuickSpec {
     
     override func spec() {
         describe("differentialAdd") {
-            
             context("when the initial list is empty") {
                 let emptyList: [Int] = []
                 

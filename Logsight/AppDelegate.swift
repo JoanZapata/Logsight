@@ -9,11 +9,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // Setup entry point
         let fileLoader = FileLoaderImpl()
-        let logsService = LogsServiceImpl(fileLoader: fileLoader)
-        let mainViewModel = MainViewModel(logsService: logsService)
-        window.contentViewController = MainViewController(viewModel: mainViewModel)
+        let viewModel = ViewModel(fileLoader: fileLoader)
+        window.contentViewController = MainViewController(viewModel: viewModel)
         
         // Reload previous apps if any
-        logsService.startReadingPreviouslyAddedApplications()
+        viewModel.startReadingPreviouslyAddedApplications()
     }
 }

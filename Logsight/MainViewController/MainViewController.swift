@@ -3,11 +3,11 @@ import Cocoa
 class MainViewController : NSViewController {
     
     private let menuMinWidth = 170
-    private let viewModel: MainViewModel
+    private let viewModel: ViewModel
     
     @IBOutlet weak var splitView: NSSplitView!
     
-    init(viewModel: MainViewModel) {
+    init(viewModel: ViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -17,8 +17,8 @@ class MainViewController : NSViewController {
     }
     
     override func viewDidLoad() {
-        let menuVC = MenuViewController(viewModel: viewModel.menuViewModel)
-        let logsVC = LogsViewController(viewModel: viewModel.logsViewModel)
+        let menuVC = MenuViewController(viewModel: viewModel)
+        let logsVC = LogsViewController(viewModel: viewModel)
         
         splitView.addArrangedSubview(menuVC.view)
         splitView.addArrangedSubview(logsVC.view)

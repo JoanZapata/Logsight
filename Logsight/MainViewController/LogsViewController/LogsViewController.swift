@@ -34,22 +34,17 @@ class LogsViewController : NSViewController {
 
 extension LogsViewController : LogsViewModelDelegate {
     
-    func logsDidUpdate(update: [LogsDiff]) {
+    func logsDidUpdate(update: Diffs) {
         let lastVisibleRow = tableView.rows(in: tableView.visibleRect).upperBound
         let shouldScrollToEndAfterUpdate = lastVisibleRow >= tableView.numberOfRows - 1
         
         // Apply the logs diff
         tableView.beginUpdates()
-        
-        update.forEach { diff in
-            switch diff {
-            case .added(let indexes):
-                let range: CountableRange<IndexSet.Element> = indexes
-                tableView.insertRows(at: IndexSet(integersIn: range), withAnimation: .effectGap)
-            case .removed(let indexes):
-                let range: CountableRange<IndexSet.Element> = indexes
-                tableView.removeRows(at: IndexSet(integersIn: range), withAnimation: .effectGap)
-            }
+        update.added.forEach {
+            tableView.insertRows(at: IndexSet(integer: $0), withAnimation: .effectGap)
+        }
+        update.removed.forEach {
+            tableView.removeRows(at: IndexSet(integer: $0), withAnimation: .effectGap)
         }
         tableView.endUpdates()
         

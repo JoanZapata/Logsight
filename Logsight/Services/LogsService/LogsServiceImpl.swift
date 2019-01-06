@@ -2,6 +2,11 @@ import Foundation
 
 class LogsServiceImpl: LogsService {
 
+    /// Contains all the logs.
+    private var allLogs: [Log] = []
+    
+    /// A subset of `allLogs`, only contains the displayed
+    /// logs, those which satisfies the currently set filters.
     var logs: [Log] = []
     
     /// Used to `tail` and parse log files
@@ -55,12 +60,13 @@ extension LogsServiceImpl : FileLoaderDelegate {
     }
     
     func onNewLogsLoaded(_ logs: [Log]) {
-        // Simply add at the end for now. TODO: Make sure it stays sorted.
-        let initialSize = self.logs.count
-        self.logs.append(contentsOf: logs)
-        let finalSize = self.logs.count
+        let logDateAscending: (Log, Log) -> ComparisonResult = { a, b in a.date.compare(b.date) }
+        let (newLogs, diffs) = self.allLogs.differentialAdd(logs, orderWith: logDateAscending)
+        self.allLogs = newLogs
+        self.logs = newLogs
+        
         delegates.forEach {
-            $0.onLogsChanged(withDiffs: [.added(initialSize..<finalSize)])
+            $0.onLogsChanged(withDiffs: diffs)
         }
     }
 }

@@ -31,7 +31,6 @@
 		0F4A713B21E12AC9007A8C86 /* LogsServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A713A21E12AC9007A8C86 /* LogsServiceImpl.swift */; };
 		0F4A713D21E12ADF007A8C86 /* LogsServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A713C21E12ADF007A8C86 /* LogsServiceDelegate.swift */; };
 		0F4A713F21E12FCD007A8C86 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A713E21E12FCD007A8C86 /* Application.swift */; };
-		0F4A714121E1313E007A8C86 /* LogsUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A714021E1313E007A8C86 /* LogsUpdate.swift */; };
 		0F4A714421E15F95007A8C86 /* ApplicationItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A714321E15F95007A8C86 /* ApplicationItemViewController.swift */; };
 		0F4A714621E15FDB007A8C86 /* ApplicationItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F4A714521E15FDB007A8C86 /* ApplicationItemViewController.xib */; };
 		0F4A715621E16F61007A8C86 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0F4A715521E16F61007A8C86 /* Podfile */; };
@@ -40,6 +39,8 @@
 		0F4A716021E17704007A8C86 /* FakeLogsServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A715F21E17704007A8C86 /* FakeLogsServiceDelegate.swift */; };
 		0F4A716221E17A94007A8C86 /* Log+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A716121E17A94007A8C86 /* Log+Equatable.swift */; };
 		0F4A716521E17ACC007A8C86 /* LogsDiff+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A716421E17ACC007A8C86 /* LogsDiff+Equatable.swift */; };
+		0F4A716821E23CF7007A8C86 /* Array+Differential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A716721E23CF7007A8C86 /* Array+Differential.swift */; };
+		0F4A716B21E23E4B007A8C86 /* Array+DifferentialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A716A21E23E4B007A8C86 /* Array+DifferentialTests.swift */; };
 		74E3F89EBC36C7A30262B04C /* Pods_LogsightTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F863E748D9827327755FC69 /* Pods_LogsightTests.framework */; };
 		A3E75FFCC20A03D5087DC3DE /* Pods_Logsight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C692811ACDBDF0080F575918 /* Pods_Logsight.framework */; };
 /* End PBXBuildFile section */
@@ -84,7 +85,6 @@
 		0F4A713A21E12AC9007A8C86 /* LogsServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsServiceImpl.swift; sourceTree = "<group>"; };
 		0F4A713C21E12ADF007A8C86 /* LogsServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsServiceDelegate.swift; sourceTree = "<group>"; };
 		0F4A713E21E12FCD007A8C86 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
-		0F4A714021E1313E007A8C86 /* LogsUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsUpdate.swift; sourceTree = "<group>"; };
 		0F4A714321E15F95007A8C86 /* ApplicationItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationItemViewController.swift; sourceTree = "<group>"; };
 		0F4A714521E15FDB007A8C86 /* ApplicationItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApplicationItemViewController.xib; sourceTree = "<group>"; };
 		0F4A714B21E16E7B007A8C86 /* LogsightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogsightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +95,8 @@
 		0F4A715F21E17704007A8C86 /* FakeLogsServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLogsServiceDelegate.swift; sourceTree = "<group>"; };
 		0F4A716121E17A94007A8C86 /* Log+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Log+Equatable.swift"; sourceTree = "<group>"; };
 		0F4A716421E17ACC007A8C86 /* LogsDiff+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogsDiff+Equatable.swift"; sourceTree = "<group>"; };
+		0F4A716721E23CF7007A8C86 /* Array+Differential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Differential.swift"; sourceTree = "<group>"; };
+		0F4A716A21E23E4B007A8C86 /* Array+DifferentialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+DifferentialTests.swift"; sourceTree = "<group>"; };
 		2A5BA49655056457E324A9ED /* Pods-LogsightTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogsightTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LogsightTests/Pods-LogsightTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F863E748D9827327755FC69 /* Pods_LogsightTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LogsightTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CECE605DC6E58B836CED2D3 /* Pods-LogsightTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogsightTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LogsightTests/Pods-LogsightTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -178,7 +180,6 @@
 				0F07CFBC21DC1D7F006B536C /* Log.swift */,
 				0F07CFBE21DC1D91006B536C /* LogLevel.swift */,
 				0F4A713E21E12FCD007A8C86 /* Application.swift */,
-				0F4A714021E1313E007A8C86 /* LogsUpdate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -261,6 +262,7 @@
 		0F4A713721E12A8C007A8C86 /* LogsService */ = {
 			isa = PBXGroup;
 			children = (
+				0F4A716621E23CE5007A8C86 /* Extensions */,
 				0F4A713621E12A50007A8C86 /* FileLoader */,
 				0F4A713821E12AAC007A8C86 /* LogsService.swift */,
 				0F4A713A21E12AC9007A8C86 /* LogsServiceImpl.swift */,
@@ -299,6 +301,7 @@
 		0F4A715C21E172FF007A8C86 /* LogsService */ = {
 			isa = PBXGroup;
 			children = (
+				0F4A716921E23E39007A8C86 /* Extensions */,
 				0F4A716321E17AAA007A8C86 /* TestUtils */,
 				0F4A715921E172EC007A8C86 /* LogsServiceImplTests.swift */,
 			);
@@ -314,6 +317,22 @@
 				0F4A716421E17ACC007A8C86 /* LogsDiff+Equatable.swift */,
 			);
 			path = TestUtils;
+			sourceTree = "<group>";
+		};
+		0F4A716621E23CE5007A8C86 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0F4A716721E23CF7007A8C86 /* Array+Differential.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0F4A716921E23E39007A8C86 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0F4A716A21E23E4B007A8C86 /* Array+DifferentialTests.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		6F979D7F9009A108D2161F81 /* Frameworks */ = {
@@ -521,6 +540,7 @@
 				0F4A713F21E12FCD007A8C86 /* Application.swift in Sources */,
 				0F4A714421E15F95007A8C86 /* ApplicationItemViewController.swift in Sources */,
 				0F07CFA821DC0768006B536C /* LogLevelDot.swift in Sources */,
+				0F4A716821E23CF7007A8C86 /* Array+Differential.swift in Sources */,
 				0F4A713B21E12AC9007A8C86 /* LogsServiceImpl.swift in Sources */,
 				0F07CFBD21DC1D7F006B536C /* Log.swift in Sources */,
 				0F33D8A521DBB88D00D58F20 /* LogsViewModel.swift in Sources */,
@@ -535,7 +555,6 @@
 				0F07CFA921DC0768006B536C /* MessageTableCellView.swift in Sources */,
 				0F07CFB021DC089E006B536C /* MainViewModel.swift in Sources */,
 				0F4A713D21E12ADF007A8C86 /* LogsServiceDelegate.swift in Sources */,
-				0F4A714121E1313E007A8C86 /* LogsUpdate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +564,7 @@
 			files = (
 				0F4A715A21E172EC007A8C86 /* LogsServiceImplTests.swift in Sources */,
 				0F4A715E21E174EF007A8C86 /* FakeFileLoader.swift in Sources */,
+				0F4A716B21E23E4B007A8C86 /* Array+DifferentialTests.swift in Sources */,
 				0F4A716021E17704007A8C86 /* FakeLogsServiceDelegate.swift in Sources */,
 				0F4A716521E17ACC007A8C86 /* LogsDiff+Equatable.swift in Sources */,
 				0F4A716221E17A94007A8C86 /* Log+Equatable.swift in Sources */,

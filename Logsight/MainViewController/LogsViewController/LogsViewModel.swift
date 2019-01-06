@@ -22,7 +22,7 @@ class LogsViewModel {
 
 extension LogsViewModel : LogsServiceDelegate {
     
-    func onLogsChanged(withDiffs diffs: [LogsDiff]) {
+    func onLogsChanged(withDiffs diffs: Diffs) {
         self.logs = logsService.logs
         delegate?.logsDidUpdate(update: diffs)
     }
@@ -30,5 +30,5 @@ extension LogsViewModel : LogsServiceDelegate {
 
 protocol LogsViewModelDelegate {
     
-    func logsDidUpdate(update: [LogsDiff])
+    func logsDidUpdate(update: Diffs)
 }

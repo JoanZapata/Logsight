@@ -13,7 +13,7 @@ protocol LogsServiceDelegate {
     
     func onApplicationFilterChanged(applications: [Application]?)
     
-    func onLogsChanged(withDiffs diffs: [LogsDiff])
+    func onLogsChanged(withDiffs diffs: Diffs)
 }
 
 // Make all functions optional by providing
@@ -28,5 +28,5 @@ extension LogsServiceDelegate {
     
     func onApplicationFilterChanged(applications: [Application]?){ }
 
-    func onLogsChanged(withDiffs diffs: [LogsDiff]){ }
+    func onLogsChanged(withDiffs diffs: Diffs){ }
 }

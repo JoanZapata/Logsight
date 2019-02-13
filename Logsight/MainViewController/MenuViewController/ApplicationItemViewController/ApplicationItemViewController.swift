@@ -7,6 +7,8 @@ class ApplicationItemViewController: NSViewController {
     private let delegate: ApplicationItemViewControllerDelegate
     private let application: Application
     
+    @IBOutlet weak var checkbox: NSButton!
+    
     init(delegate: ApplicationItemViewControllerDelegate, application: Application) {
         self.delegate = delegate
         self.application = application
@@ -25,9 +27,15 @@ class ApplicationItemViewController: NSViewController {
     @IBAction func onDeleteTapped(_ sender: Any) {
         delegate.onRemoveClicked(forApplication: application)
     }
+    
+    @IBAction func onCheckTapped(_ sender: Any) {
+        delegate.onToggle(application: application, newValue: checkbox.state == .on)
+    }
 }
 
 protocol ApplicationItemViewControllerDelegate {
     
     func onRemoveClicked(forApplication application: Application)
+    
+    func onToggle(application: Application, newValue checked: Bool)
 }

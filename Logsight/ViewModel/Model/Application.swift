@@ -12,3 +12,12 @@ struct Application {
     /// The full path to the log file.
     let filePath: String
 }
+
+extension Application: Hashable {
+    
+    public var hashValue: Int {
+        get {
+            return filePath.hashValue
+        }
+    }
+}

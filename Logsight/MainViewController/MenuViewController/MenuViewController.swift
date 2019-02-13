@@ -6,7 +6,7 @@ class MenuViewController : NSViewController {
     
     @IBOutlet weak var applicationStackView: NSStackView!
     
-    private var applications: [Application] = []
+    private var applications: [Application: Bool] = [:]
     private var applicationViews: [ApplicationItemViewController] = []
     
     init(viewModel: ViewModel) {
@@ -27,12 +27,12 @@ class MenuViewController : NSViewController {
 extension MenuViewController : ViewModelDelegate {
     
     func onStartListening(toApplication application: Application) {
-        self.applications.append(application)
+        self.applications[application] = true
         updateApplications()
     }
     
     func onStopListening(toApplication application: Application) {
-        self.applications.removeAll(where: { $0.filePath == application.filePath })
+        self.applications.removeValue(forKey: application)
         updateApplications()
     }
     
@@ -49,7 +49,7 @@ extension MenuViewController : ViewModelDelegate {
             return
         }
         
-        applications.forEach { app in
+        applications.forEach { (app, enabled) in
             let button = ApplicationItemViewController(delegate: self, application: app)
             
             applicationViews.append(button)
@@ -62,5 +62,14 @@ extension MenuViewController : ApplicationItemViewControllerDelegate {
 
     func onRemoveClicked(forApplication application: Application) {
         viewModel.stopReading(application: application)
+    }
+    
+    func onToggle(application: Application, newValue checked: Bool) {
+        applications[application] = checked
+        
+        let checkedApplications = applications
+            .filter { $0.value }
+            .map { $0.key }
+        viewModel.setApplicationFilter(applications: checkedApplications)
     }
 }

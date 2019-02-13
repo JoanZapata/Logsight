@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="ApplicationItemViewController" customModule="Logsight" customModuleProvider="target">
             <connections>
                 <outlet property="check" destination="bO3-E0-iKQ" id="VQh-Ko-zi2"/>
+                <outlet property="checkbox" destination="bO3-E0-iKQ" id="UpM-H7-tc4"/>
                 <outlet property="view" destination="c22-O7-iKe" id="12w-lL-3Kn"/>
             </connections>
         </customObject>
@@ -26,6 +27,9 @@
                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
+                            <connections>
+                                <action selector="onCheckTapped:" target="-2" id="TLj-Ck-GXL"/>
+                            </connections>
                         </button>
                         <button horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wG3-8r-gNW">
                             <rect key="frame" x="459" y="10" width="21" height="15"/>

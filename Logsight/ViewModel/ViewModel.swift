@@ -78,7 +78,23 @@ class ViewModel {
     /// all logs. If set to any log level, it only retains
     /// log levels that are equal to it or higher.
     func setLogLevelFilter(logLevels: [LogLevel]?) {
-        // TODO
+        
+        // Update filters
+        let oldFilters = filters
+        filters.keepLogLevels = logLevels
+        
+        // Compute the diff and update the logs
+        let (newLogs, diffs) = allLogs.differentialUpdateFilter(
+            unfilteredList: allLogs,
+            wasKeeping: { oldFilters.apply(item: $0) },
+            nowKeeps: { filters.apply(item: $0) }
+        )
+        logs = newLogs
+        
+        // Notify the delegates
+        delegates.forEach {
+            $0.onLogsChanged(withDiffs: diffs)
+        }
     }
     
     /// Sets the application filter. If set to null, it retinas

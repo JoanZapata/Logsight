@@ -1,6 +1,6 @@
 import Foundation
 
-enum LogLevel {
+enum LogLevel: String, CaseIterable {
     case trace, debug, info, warn, error
     
     static func from(string levelString: String) -> LogLevel? {

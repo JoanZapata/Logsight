@@ -52,7 +52,7 @@
                                                         <rect key="frame" x="0.0" y="23" width="60" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="right" title="Table View Cell" id="3s0-Fx-vg5">
-                                                            <font key="font" metaFont="system"/>
+                                                            <font key="font" metaFont="system" size="15"/>
                                                             <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
@@ -85,7 +85,7 @@
                                                         <rect key="frame" x="0.0" y="23" width="62" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="5q2-lV-yNw">
-                                                            <font key="font" metaFont="system"/>
+                                                            <font key="font" metaFont="system" size="15"/>
                                                             <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
@@ -110,20 +110,20 @@
                                         </textFieldCell>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
-                                            <tableCellView id="7Ag-QS-NAC" customClass="MessageTableCellView" customModule="Logsight" customModuleProvider="target">
+                                            <tableCellView misplaced="YES" id="7Ag-QS-NAC" customClass="MessageTableCellView" customModule="Logsight" customModuleProvider="target">
                                                 <rect key="frame" x="129" y="1" width="500" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="M7R-x2-IvR" customClass="LogLevelDot" customModule="Logsight" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="6" height="17"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="6" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="6" id="Kek-Bm-vAX"/>
                                                         </constraints>
                                                     </customView>
                                                     <textField verticalHuggingPriority="700" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="neh-PL-w8l">
-                                                        <rect key="frame" x="9" y="0.0" width="493" height="17"/>
+                                                        <rect key="frame" x="9" y="0.0" width="493" height="19"/>
                                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Label" id="abF-Om-vmO">
-                                                            <font key="font" metaFont="system"/>
+                                                            <font key="font" metaFont="system" size="15"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>

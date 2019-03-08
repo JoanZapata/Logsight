@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="MenuViewController" customModule="Logsight" customModuleProvider="target">
             <connections>
                 <outlet property="applicationStackView" destination="lvM-ZE-GwR" id="jiR-Cx-YN9"/>
+                <outlet property="logLevelStackView" destination="ofQ-Se-rWT" id="QHK-0w-Nqf"/>
                 <outlet property="view" destination="c22-O7-iKe" id="XAd-i2-SmS"/>
             </connections>
         </customObject>
@@ -27,10 +28,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="537" height="376"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="6" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qsF-mY-bqB" userLabel="Menu Stack View">
-                                        <rect key="frame" x="10" y="180" width="527" height="196"/>
+                                        <rect key="frame" x="10" y="196" width="527" height="180"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eIX-iB-OFr">
-                                                <rect key="frame" x="-2" y="179" width="81" height="17"/>
+                                                <rect key="frame" x="-2" y="163" width="81" height="17"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Applications" id="8MG-t1-Znn">
                                                     <font key="font" metaFont="systemMedium" size="13"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -38,67 +39,78 @@
                                                 </textFieldCell>
                                             </textField>
                                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="6" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lvM-ZE-GwR">
-                                                <rect key="frame" x="0.0" y="123" width="92" height="50"/>
+                                                <rect key="frame" x="0.0" y="107" width="92" height="50"/>
                                             </stackView>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CHN-Tu-PSq">
-                                                <rect key="frame" x="-2" y="100" width="66" height="17"/>
+                                                <rect key="frame" x="-2" y="84" width="66" height="17"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Log levels" id="fzr-5G-87z">
                                                     <font key="font" metaFont="systemMedium" size="13"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mep-ub-HZ6">
-                                                <rect key="frame" x="-2" y="78" width="56" height="18"/>
-                                                <buttonCell key="cell" type="check" title="Trace" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Ndy-R8-DiP">
-                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                            </button>
-                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mdb-gy-ev1">
-                                                <rect key="frame" x="-2" y="58" width="62" height="18"/>
-                                                <buttonCell key="cell" type="check" title="Debug" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="4yv-Gy-3mE">
-                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                            </button>
-                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="71m-Lz-NUB">
-                                                <rect key="frame" x="-2" y="38" width="45" height="18"/>
-                                                <buttonCell key="cell" type="check" title="Info" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="nQC-qp-tzT">
-                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                            </button>
-                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2a5-Uq-c13">
-                                                <rect key="frame" x="-2" y="18" width="54" height="18"/>
-                                                <buttonCell key="cell" type="check" title="Warn" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="aiy-s0-3hn">
-                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                            </button>
-                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uVB-4H-C7H">
-                                                <rect key="frame" x="-2" y="-2" width="52" height="18"/>
-                                                <buttonCell key="cell" type="check" title="Error" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="0Oa-6R-S0O">
-                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                            </button>
+                                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="2" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ofQ-Se-rWT">
+                                                <rect key="frame" x="0.0" y="0.0" width="58" height="78"/>
+                                                <subviews>
+                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mep-ub-HZ6">
+                                                        <rect key="frame" x="-2" y="62" width="56" height="18"/>
+                                                        <buttonCell key="cell" type="check" title="Trace" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Ndy-R8-DiP">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                    </button>
+                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mdb-gy-ev1">
+                                                        <rect key="frame" x="-2" y="46" width="62" height="18"/>
+                                                        <buttonCell key="cell" type="check" title="Debug" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="4yv-Gy-3mE">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                    </button>
+                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="71m-Lz-NUB">
+                                                        <rect key="frame" x="-2" y="30" width="45" height="18"/>
+                                                        <buttonCell key="cell" type="check" title="Info" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="nQC-qp-tzT">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                    </button>
+                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2a5-Uq-c13">
+                                                        <rect key="frame" x="-2" y="14" width="54" height="18"/>
+                                                        <buttonCell key="cell" type="check" title="Warn" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="aiy-s0-3hn">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                    </button>
+                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uVB-4H-C7H">
+                                                        <rect key="frame" x="-2" y="-2" width="52" height="18"/>
+                                                        <buttonCell key="cell" type="check" title="Error" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="0Oa-6R-S0O">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                    </button>
+                                                </subviews>
+                                                <visibilityPriorities>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                </visibilityPriorities>
+                                                <customSpacing>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                </customSpacing>
+                                            </stackView>
                                         </subviews>
                                         <visibilityPriorities>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
-                                            <integer value="1000"/>
-                                            <integer value="1000"/>
-                                            <integer value="1000"/>
-                                            <integer value="1000"/>
                                         </visibilityPriorities>
                                         <customSpacing>
-                                            <real value="3.4028234663852886e+38"/>
-                                            <real value="3.4028234663852886e+38"/>
-                                            <real value="3.4028234663852886e+38"/>
-                                            <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>

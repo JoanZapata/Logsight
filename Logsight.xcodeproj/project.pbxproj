@@ -37,6 +37,8 @@
 		0F4A716521E17ACC007A8C86 /* LogsDiff+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A716421E17ACC007A8C86 /* LogsDiff+Equatable.swift */; };
 		0F4A716821E23CF7007A8C86 /* Array+Differential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A716721E23CF7007A8C86 /* Array+Differential.swift */; };
 		0F4A716B21E23E4B007A8C86 /* Array+DifferentialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A716A21E23E4B007A8C86 /* Array+DifferentialTests.swift */; };
+		0FE45BB12214BB7C0093A2B0 /* LevelItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE45BB02214BB7C0093A2B0 /* LevelItemViewController.swift */; };
+		0FE45BB32214BB8A0093A2B0 /* LevelItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FE45BB22214BB8A0093A2B0 /* LevelItemViewController.xib */; };
 		74E3F89EBC36C7A30262B04C /* Pods_LogsightTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F863E748D9827327755FC69 /* Pods_LogsightTests.framework */; };
 		A3E75FFCC20A03D5087DC3DE /* Pods_Logsight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C692811ACDBDF0080F575918 /* Pods_Logsight.framework */; };
 /* End PBXBuildFile section */
@@ -89,6 +91,8 @@
 		0F4A716421E17ACC007A8C86 /* LogsDiff+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogsDiff+Equatable.swift"; sourceTree = "<group>"; };
 		0F4A716721E23CF7007A8C86 /* Array+Differential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Differential.swift"; sourceTree = "<group>"; };
 		0F4A716A21E23E4B007A8C86 /* Array+DifferentialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+DifferentialTests.swift"; sourceTree = "<group>"; };
+		0FE45BB02214BB7C0093A2B0 /* LevelItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelItemViewController.swift; sourceTree = "<group>"; };
+		0FE45BB22214BB8A0093A2B0 /* LevelItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LevelItemViewController.xib; sourceTree = "<group>"; };
 		2A5BA49655056457E324A9ED /* Pods-LogsightTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogsightTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LogsightTests/Pods-LogsightTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F863E748D9827327755FC69 /* Pods_LogsightTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LogsightTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CECE605DC6E58B836CED2D3 /* Pods-LogsightTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogsightTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LogsightTests/Pods-LogsightTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 		0F07CFB121DC09E9006B536C /* MenuViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0FE45BAF2214BB5F0093A2B0 /* LevelItemViewController */,
 				0F4A714221E15F6B007A8C86 /* ApplicationItemViewController */,
 				0F07CFB221DC0A0E006B536C /* MenuViewController.swift */,
 				0F07CFB421DC0A1A006B536C /* MenuViewController.xib */,
@@ -307,6 +312,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		0FE45BAF2214BB5F0093A2B0 /* LevelItemViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0FE45BB02214BB7C0093A2B0 /* LevelItemViewController.swift */,
+				0FE45BB22214BB8A0093A2B0 /* LevelItemViewController.xib */,
+			);
+			path = LevelItemViewController;
+			sourceTree = "<group>";
+		};
 		6F979D7F9009A108D2161F81 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,6 +427,7 @@
 			files = (
 				0F4A714621E15FDB007A8C86 /* ApplicationItemViewController.xib in Resources */,
 				0F07CFAE21DC0856006B536C /* MainViewController.xib in Resources */,
+				0FE45BB32214BB8A0093A2B0 /* LevelItemViewController.xib in Resources */,
 				0F33D88921DBB0C800D58F20 /* Assets.xcassets in Resources */,
 				0F07CFB521DC0A1A006B536C /* MenuViewController.xib in Resources */,
 				0F33D89A21DBB38000D58F20 /* LogsViewController.xib in Resources */,
@@ -516,6 +531,7 @@
 				0F07CFBD21DC1D7F006B536C /* Log.swift in Sources */,
 				0F07CFBA21DC1C8A006B536C /* FileLoader.swift in Sources */,
 				0F07CFBF21DC1D91006B536C /* LogLevel.swift in Sources */,
+				0FE45BB12214BB7C0093A2B0 /* LevelItemViewController.swift in Sources */,
 				0F33D88721DBB0C600D58F20 /* AppDelegate.swift in Sources */,
 				0F07CFB321DC0A0E006B536C /* MenuViewController.swift in Sources */,
 				0F33D89D21DBB70300D58F20 /* DropZone.swift in Sources */,

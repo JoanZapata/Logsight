@@ -5,9 +5,11 @@ class MenuViewController : NSViewController {
     let viewModel: ViewModel
     
     @IBOutlet weak var applicationStackView: NSStackView!
+    @IBOutlet weak var logLevelStackView: NSStackView!
     
     private var applications: [Application: Bool] = [:]
     private var applicationViews: [ApplicationItemViewController] = []
+    private var logLevelViews: [LevelItemViewController] = []
     
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
@@ -21,6 +23,17 @@ class MenuViewController : NSViewController {
     override func viewDidLoad() {
         viewModel.addDelegate(self)
         updateApplications()
+        updateLogLevels()
+    }
+    
+    func updateLogLevels() {
+        logLevelViews = []
+        logLevelStackView.subviews = []
+        LogLevel.allCases.forEach { level in
+            let item = LevelItemViewController(delegate: self, level: level)
+            logLevelViews.append(item)
+            logLevelStackView.addArrangedSubview(item.view)
+        }
     }
 }
 
@@ -37,6 +50,7 @@ extension MenuViewController : ViewModelDelegate {
     }
     
     func updateApplications() {
+        applicationViews = []
         applicationStackView.subviews = []
         if applications.isEmpty {
             let placeholder = NSTextField()
@@ -71,5 +85,19 @@ extension MenuViewController : ApplicationItemViewControllerDelegate {
             .filter { $0.value }
             .map { $0.key }
         viewModel.setApplicationFilter(applications: checkedApplications)
+    }
+}
+
+extension MenuViewController: LevelItemViewControllerDelegate {
+ 
+    func onToggle(level: LogLevel, newValue checked: Bool) {
+        viewModel.setLogLevelFilter(logLevels: logLevelViews
+            .filter { $0.isChecked() }
+            .map { $0.level })
+    }
+    
+    func onSelected(level: LogLevel) {
+        // TODO define log filter and call view model
+        print("Selected \(level)")
     }
 }

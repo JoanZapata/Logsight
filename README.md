@@ -19,7 +19,8 @@ Logsight is being developed to aggregate multiple files like that in real time a
 Logsight is currently in a very early version:
 * Handles drag-and-drop of one or multiple files into it;
 * Parses JSON content and displays the filename, date, log level and message for each log;
-* Add new logs as soon as they are written in the source files. 
+* Adds new logs as soon as they are written in the source files;
+* Allows filtering the logs by file and log level.
 
 ![Logsight screenshot](/Medias/screenshot.png)
 

@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="LevelItemViewController" customModule="Logsight" customModuleProvider="target">
             <connections>
                 <outlet property="checkbox" destination="4Hv-rN-8cF" id="DAZ-Ah-vWo"/>
+                <outlet property="dot" destination="amo-8B-YXJ" id="hFJ-Fy-Mhl"/>
                 <outlet property="label" destination="a74-tV-6KX" id="00d-pY-CHV"/>
                 <outlet property="view" destination="c22-O7-iKe" id="E3c-wN-RMc"/>
             </connections>
@@ -31,8 +32,14 @@
                                 <action selector="onCheckTapped:" target="-2" id="yx0-NL-SLS"/>
                             </connections>
                         </button>
+                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="amo-8B-YXJ" customClass="LogLevelDot" customModule="Logsight" customModuleProvider="target">
+                            <rect key="frame" x="20" y="111" width="6" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="6" id="d8g-J2-TvM"/>
+                            </constraints>
+                        </customView>
                         <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="a74-tV-6KX">
-                            <rect key="frame" x="18" y="128" width="464" height="17"/>
+                            <rect key="frame" x="445" y="128" width="37" height="17"/>
                             <gestureRecognizers>
                                 <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="p4m-Gk-U9e">
                                     <connections>
@@ -47,11 +54,16 @@
                             </textFieldCell>
                         </textField>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="a74-tV-6KX" firstAttribute="leading" secondItem="amo-8B-YXJ" secondAttribute="trailing" constant="4" id="cCo-4c-jOH"/>
+                    </constraints>
                     <visibilityPriorities>
+                        <integer value="1000"/>
                         <integer value="1000"/>
                         <integer value="1000"/>
                     </visibilityPriorities>
                     <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
                         <real value="3.4028234663852886e+38"/>
                         <real value="3.4028234663852886e+38"/>
                     </customSpacing>

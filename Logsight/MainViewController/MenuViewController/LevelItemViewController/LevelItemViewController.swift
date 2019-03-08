@@ -4,6 +4,7 @@ class LevelItemViewController: NSViewController {
     
     @IBOutlet weak var label: NSTextField!
     @IBOutlet weak var checkbox: NSButton!
+    @IBOutlet weak var dot: LogLevelDot!
     
     let delegate: LevelItemViewControllerDelegate
     let level: LogLevel
@@ -16,6 +17,7 @@ class LevelItemViewController: NSViewController {
     
     override func viewDidLoad() {
         label.stringValue = level.rawValue
+        dot.color = level.color().cgColor
     }
     
     required init?(coder: NSCoder) {

@@ -72,9 +72,6 @@ extension Array {
         filteredBy filter: ((Element) -> Bool)? = nil,
         orderWith compare: (Element, Element) -> ComparisonResult
     ) -> ([Element], Diffs) {
-        if self.isEmpty {
-            return (items, Diffs(added: [Int](0..<items.count)))
-        }
         
         // Get the first elligible new element
         guard let firstNewElement = items.first(where: { filter == nil || filter!($0) })
@@ -86,7 +83,9 @@ extension Array {
         // Logsight) case where we're adding new items
         // at the end of the list.
         var insertionPoint = self.count
-        while insertionPoint > 0 && compare(self[insertionPoint - 1], firstNewElement) == .orderedDescending {
+        while !self.isEmpty
+            && insertionPoint > 0
+            && compare(self[insertionPoint - 1], firstNewElement) == .orderedDescending {
             insertionPoint -= 1
         }
         

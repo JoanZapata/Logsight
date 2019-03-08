@@ -177,6 +177,18 @@ class ArrayDifferentialTests: QuickSpec {
                     expect(diffs.added).to(equal([0, 3, 5]))
                     expect(diffs.removed).to(beEmpty())
                 }
+                
+                it("also filters when the initial list is empty") {
+                    let (newList, diffs) = [].differentialAdd(
+                        [1, 2, 3],
+                        filteredBy: { _ in false },
+                        orderWith: self.intComparison
+                    )
+                    
+                    expect(newList).to(equal([]))
+                    expect(diffs.added).to(beEmpty())
+                    expect(diffs.removed).to(beEmpty())
+                }
             }
         }
     }

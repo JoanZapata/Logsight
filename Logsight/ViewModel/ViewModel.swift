@@ -22,7 +22,17 @@ class ViewModel {
     /// a change in the logs.
     private var delegates: [ViewModelDelegate] = []
     
+    /// An updated list of counters and metrics about the logs
+    private var counters: Counters {
+        didSet {
+            delegates.forEach {
+                $0.onCountersChanged(counters: counters)
+            }
+        }
+    }
+    
     init(fileLoader: FileLoader) {
+        self.counters = Counters()
         self.fileLoader = fileLoader
         self.fileLoader.delegate = self
     }
@@ -58,6 +68,7 @@ class ViewModel {
             wasKeeping: { filters.apply(item: $0) },
             nowKeeps: { filters.apply(item: $0) && $0.application.filePath != application.filePath }
         )
+        counters.totalLogs += diffs.added.count - diffs.removed.count
         allLogs = allLogs
             .filter { $0.application.filePath != application.filePath }
         logs = newLogs
@@ -89,6 +100,7 @@ class ViewModel {
             wasKeeping: { oldFilters.apply(item: $0) },
             nowKeeps: { filters.apply(item: $0) }
         )
+        counters.totalLogs += diffs.added.count - diffs.removed.count
         logs = newLogs
         
         // Notify the delegates
@@ -112,6 +124,7 @@ class ViewModel {
             wasKeeping: { oldFilters.apply(item: $0) },
             nowKeeps: { filters.apply(item: $0) }
         )
+        counters.totalLogs += diffs.added.count - diffs.removed.count
         logs = newLogs
         
         // Notify the delegates
@@ -139,7 +152,7 @@ extension ViewModel : FileLoaderDelegate {
             filteredBy: { self.filters.apply(item: $0) },
             orderWith: ViewModel.ORDER_BY_LOG_DATE
         )
-        
+        counters.totalLogs += diffs.added.count - diffs.removed.count
         self.allLogs = newAllLogs
         self.logs = newLogs
         

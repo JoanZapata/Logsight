@@ -14,6 +14,8 @@ protocol ViewModelDelegate {
     func onApplicationFilterChanged(applications: [Application]?)
     
     func onLogsChanged(withDiffs diffs: Diffs)
+    
+    func onCountersChanged(counters: Counters)
 }
 
 // Make all functions optional by providing
@@ -29,4 +31,6 @@ extension ViewModelDelegate {
     func onApplicationFilterChanged(applications: [Application]?){ }
 
     func onLogsChanged(withDiffs diffs: Diffs){ }
+    
+    func onCountersChanged(counters: Counters){ }
 }

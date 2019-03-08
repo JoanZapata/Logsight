@@ -39,6 +39,7 @@
 		0F4A716B21E23E4B007A8C86 /* Array+DifferentialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A716A21E23E4B007A8C86 /* Array+DifferentialTests.swift */; };
 		0FE425742233236400CDFB76 /* NSColor+rgb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE425732233236400CDFB76 /* NSColor+rgb.swift */; };
 		0FE42576223323A700CDFB76 /* LogLevel+color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE42575223323A700CDFB76 /* LogLevel+color.swift */; };
+		0FE425792233271400CDFB76 /* Counters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE425782233271400CDFB76 /* Counters.swift */; };
 		0FE45BB12214BB7C0093A2B0 /* LevelItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE45BB02214BB7C0093A2B0 /* LevelItemViewController.swift */; };
 		0FE45BB32214BB8A0093A2B0 /* LevelItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FE45BB22214BB8A0093A2B0 /* LevelItemViewController.xib */; };
 		74E3F89EBC36C7A30262B04C /* Pods_LogsightTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F863E748D9827327755FC69 /* Pods_LogsightTests.framework */; };
@@ -95,6 +96,7 @@
 		0F4A716A21E23E4B007A8C86 /* Array+DifferentialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+DifferentialTests.swift"; sourceTree = "<group>"; };
 		0FE425732233236400CDFB76 /* NSColor+rgb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSColor+rgb.swift"; sourceTree = "<group>"; };
 		0FE42575223323A700CDFB76 /* LogLevel+color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogLevel+color.swift"; sourceTree = "<group>"; };
+		0FE425782233271400CDFB76 /* Counters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counters.swift; sourceTree = "<group>"; };
 		0FE45BB02214BB7C0093A2B0 /* LevelItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelItemViewController.swift; sourceTree = "<group>"; };
 		0FE45BB22214BB8A0093A2B0 /* LevelItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LevelItemViewController.xib; sourceTree = "<group>"; };
 		2A5BA49655056457E324A9ED /* Pods-LogsightTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogsightTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LogsightTests/Pods-LogsightTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				0F07CFBC21DC1D7F006B536C /* Log.swift */,
 				0F07CFBE21DC1D91006B536C /* LogLevel.swift */,
 				0F4A713E21E12FCD007A8C86 /* Application.swift */,
+				0FE425782233271400CDFB76 /* Counters.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				0FE42576223323A700CDFB76 /* LogLevel+color.swift in Sources */,
 				0F4A713B21E12AC9007A8C86 /* ViewModel.swift in Sources */,
 				0F07CFBD21DC1D7F006B536C /* Log.swift in Sources */,
+				0FE425792233271400CDFB76 /* Counters.swift in Sources */,
 				0F07CFBA21DC1C8A006B536C /* FileLoader.swift in Sources */,
 				0F07CFBF21DC1D91006B536C /* LogLevel.swift in Sources */,
 				0FE45BB12214BB7C0093A2B0 /* LevelItemViewController.swift in Sources */,
